@@ -1,0 +1,28 @@
+{
+  "name": "js-one-page",
+  "main": "server.js",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "npm run clean && npm run build-sass && npm run js-build && node ./scripts/build",
+    "serve": "serve public -p 4000",
+    "build-sass": "sass --style=compressed --no-charset src/scss/style.scss src/assets/css/style.css",
+    "js-build": "concat -o ./src/assets/js/bundle.js ./src/assets/js/jquery.js ./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js ./src/assets/js/index.js",
+    "clean": "rimraf public"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "bootstrap": "^4.4.1",
+    "concat": "^1.0.3",
+    "cpx": "^1.5.0",
+    "directory-tree": "^2.2.3",
+    "file-system": "^2.2.2",
+    "fs-extra": "^8.1.0",
+    "hoek": ">=4.2.1",
+    "html-pdf": "^2.2.0",
+    "node-thumbnail": "^0.15.0",
+    "path": "^0.12.7",
+    "rimraf": "^3.0.0",
+    "sass": "^1.22.9",
+    "serve": "^11.3.0"
+  }
+}
