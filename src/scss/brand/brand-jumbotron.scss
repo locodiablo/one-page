@@ -1,0 +1,54 @@
+.homepage .jumbotron{
+  &.bg-light{
+    border-top: solid 1px #eee;
+  }
+}
+
+.bg-primary-fade{
+  background: radial-gradient(ellipse at bottom left, #777, #555, $primary);
+}
+
+.bg-primary-fade-2{
+  background: radial-gradient(ellipse at bottom left, $primary, #555, #777);
+}
+
+.bg-primary-fade-2,
+.bg-primary-fade{
+  color: $white;
+
+  h1,
+  h2{
+    a{
+      color: $white;
+    }
+  }
+  .site-icon,
+  .nav-item{
+    color: $white;
+  }
+
+
+}
+
+.btn-white{
+  .site-icon{
+    color: $black;
+  }
+}
+.btn-black{
+  .site-icon{
+    color: $white;
+  }
+}
+
+.bg-fade-2{
+  color: $white;
+  background: radial-gradient(ellipse at bottom left, #E3EEB5, #9AB23B);
+  // strong blue 0E40BF
+  h3{
+    color: $white;
+  }
+  .text-list{
+    color: $white;
+  }
+}

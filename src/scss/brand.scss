@@ -1,0 +1,19 @@
+@import "./brand/brand-font.scss";
+@import "./brand/brand-text.scss";
+@import "./brand/brand-carousel.scss";
+@import "./brand/brand-carousel-nav.scss";
+
+@import "./brand/brand-animations.scss";
+
+
+
+// midnight
+// radial-gradient(circle at 75% 0%, #fff, #0a9cf7, #081157, #000000)
+// sunset
+// radial-gradient(circle at 75% 20%, #fcecc0, #faac05, #543103)
+
+@include media-breakpoint-up(sm){
+  // .md-100{
+  //   height: 100% !important;
+  // }
+}

@@ -1,0 +1,80 @@
+@import "./modal-side.scss";
+
+.nav-back{
+  color: $primary;
+  cursor: pointer;
+  &.disabled{
+    color: $black;
+    opacity: $opacity_disabled;
+    cursor: default;
+    &:hover{
+      background: transparent !important;
+    }
+  }
+
+  .nav-item-link{
+    cursor: pointer;
+  }
+}
+
+.modal-nav{
+  .modal{
+    .modal-dialog{
+      max-width: none;
+      margin: 0 auto;
+      background: $modal-top-bg;
+
+      @include navHeader;
+
+      .modal-content {
+        border: 0;
+        border-radius: 0;
+        background: $modal-top-bg;
+
+        .modal-body{
+          padding: 0;
+
+          .nav_carousel{
+
+            .carousel-item{
+              border-bottom: solid 1px $black;
+
+              .nav-section-description{
+                opacity: 0;
+                -webkit-transition: -webkit-transform .3s ease-out;
+                -moz-transition: -moz-transform .3s ease-out;
+                -o-transition: -o-transform .3s ease-out;
+                transition: transform .3s ease-out;
+                transform: translate(0, 2rem);
+              }
+              &.active{
+                .nav-section-description{
+                  transform: none;
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-item{
+  &.nav-t-active{
+    border-bottom: solid $width-active-border $primary;
+    margin-bottom: -$width-active-border;
+  }
+}
+
+@include media-breakpoint-up(sm){
+  @import "./modal-top.scss";
+  .modal-nav{
+    .modal-title{
+      position: relative;
+      padding-left: $grid-gutter-width;
+      left: 50%;
+    }
+  }
+}

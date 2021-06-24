@@ -7,8 +7,9 @@ function navbar(data){return `
     <div class="container-xl navbar-container p-0">
 
       <div class="navbar-expand">
-        <div class="nav-items navbar-nav navbar-site">
-          <a href="/" class="col-auto nav-item nav-item-link" id="sjr-nav-logo">
+
+        <div class=" nav nav-tabs text-center nav-items navbar-nav navbar-site">
+          <a href="/" class="nav-item nav-item-home">
             ${functions.render_img({
               src: paths.imagesSimonRLogo,
               class: "nav-logo",
@@ -16,35 +17,29 @@ function navbar(data){return `
             })}
             <span class="d-none d-md-inline strong">${vars.site_name}</span>
           </a>
-          <a href="${paths.pageContact}" class="col nav-item nav-item-link j-contact">
-            Contact
+          <a href="${paths.menuData.contact.href}" class="nav-item nav-item-content-contact">
+            ${paths.menuData.contact.text}
           </a>
-          <a href="${paths.pageCV}" class="col nav-item nav-item-link j-cv">
-            CV
+          <a href="${paths.menuData.cv.href}" class="nav-item nav-item-content-cv">
+            ${paths.menuData.cv.text}
           </a>
         </div>
+
       </div>
 
-      <div class="d-none d-sm-flex navbar-expand ml-auto">
-        <div class="nav-items navbar-nav navbar-site ml-auto-">
-          <a href="${paths.pageGallery}" class="col nav-item nav-item-link j-t-menu" data-my-menu="2">
-            Gallery
-          </a>
-
-          <a href="${paths.pageCareer}" class="col nav-item nav-item-link j-t-menu" data-my-menu="1">
-            Career
-          </a>
-
-          <a href="${paths.pageAbout}" class="col nav-item nav-item-link j-t-menu" data-my-menu="0">
-            About
-          </a>
-
-        </div>
+      <div class="d-none d-sm-flex navbar-expand nav nav-tabs nav-items ml-auto">
+        <a href="${paths.menuData.gallery.href}" class="nav-item nav-item-content-gallery">
+          ${paths.menuData.gallery.text}
+        </a>
+        <a href="${paths.menuData.career.href}" class="nav-item nav-item-content-career">
+          ${paths.menuData.career.text}
+        </a>
       </div>
 
       <span class="navbar-toggler j-main-menu" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
         <span class="nav-fas fas fa-bars"></span>
       </span>
+
     </div>
   </nav>
 

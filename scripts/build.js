@@ -110,6 +110,7 @@ function buildPDFS(data){
 
 // RETURN SRC FILES AS OBJECT
 const pageDefinitionsDir = dirTree(`./${paths.definitionsDir}`,{extensions:/\.js/});
+
 const imagesDirSrc = dirTree(`${paths.imagesDir}/gallery`,{extensions:/\.jpg/});
 
 const buildActions = {
@@ -122,6 +123,7 @@ const buildActions = {
   },
   file: function(data,level,index){
     const pageContent = require(`../${data.path}`);
+    //console.log('pageContent',pageContent)
     const pageTemplate = require(`${paths.templatesDir}/${pageContent.config.html_template}`);
     const relativeUrl = data.path.replace(paths.definitionsDir,"");
     const outputUrl = relativeUrl.replace(data.extension,".html");

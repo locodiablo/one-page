@@ -5,11 +5,6 @@ const navbar_main = require("../partials/navbar_main");
 const footer = require("../partials/footer");
 const paths = require("../paths.js");
 const vars = require("../vars.js");
-//const dirTree = require("directory-tree");
-//let menuData = dirTree(`./${paths.definitionsDir}`, { extensions:/\.js/,exclude: /404.js/ }).children;
-
-// showcrumb: false
-//menuData.map((eachItem,index) => vars.navTreeSplit[eachItem.type](eachItem)).join("")
 
 function template_home(data){
   const galleryCarouselJS = ('gallery' in data) ? `<script>$("#${data.gallery.id}").carousel();</script>` : ''
@@ -17,12 +12,11 @@ return `
 ${dochead(data)}
 <body class="page-basic ${data.config.body_class ? data.config.body_class : ''}" data-tpb="${data.pageContentUrl}" data-date="${vars.buildDate}">
   ${navbar_main(data)}
-
-  ${data.content}
+  ${data.body.map(bodyPart => bodyPart).join("")}
   ${footer(data)}
   <script>
-
-    const contacts = ${JSON.stringify(vars.profileLinks)}
+    const menuData = ${JSON.stringify(paths.menuData)}
+    //const contacts = ${JSON.stringify(vars.profileLinks)}
     const cv = ${JSON.stringify({
       pageCV: paths.pageCV,
       pageCVfile: paths.pageCVfile,
@@ -55,6 +49,45 @@ ${dochead(data)}
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
   </script>
+
+  <script type="text/javascript">
+
+  $(document).ready(function ($) {
+
+    var hash = "";
+
+    function doTab(data){
+      $('.tab-pane.active.show').removeClass("active show");
+      $('.navbar-main .nav-item-' + data).addClass("active");
+      $('#' + data).addClass("active show");
+    }
+
+    function setDefault(){
+      doTab('content-home')
+    }
+
+    function locationHashChanged() {
+      hash = location.hash.replace(/^#/, '');  // ^ means starting, meaning only match the first hash
+      doTab(hash)
+    }
+
+    function hashCheck(){
+      location.hash !== "" ? locationHashChanged() : setDefault()
+    }
+
+    window.onhashchange = hashCheck;
+
+    hashCheck()
+
+  })
+
+  const page = {
+    show: function(data){
+
+    }
+  }
+
+</script>
 </body>
 </html>
 `}

@@ -1,0 +1,29 @@
+.convo{
+  padding: $grid-gutter-width/3;
+  .conv{
+    margin: $grid-gutter-width/3;
+
+    .conv-text{
+      display: inline-block;
+      padding: $grid-gutter-width/4;
+      font-size: $font-size-sm;
+      border-radius: $border-radius-sm;
+    }
+  }
+  .conv-l{
+    padding-right: 20%;
+    text-align: left;
+    .conv-text{
+      background: $gray-700;
+      color: $white;
+    }
+  }
+  .conv-r{
+    padding-left: 20%;
+    text-align: right;
+    .conv-text{
+      color: $black;
+      background: $gray-200;
+    }
+  }
+}

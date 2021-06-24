@@ -1,17 +1,17 @@
 // @import "./custom.scss";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-// @import "./variables.scss";
+@import "./variables.scss";
 // @import "./carousel.scss";
 // @import "./modal.scss";
 // @import "./modal-nav.scss";
 // @import "./modal-demo.scss";
-// @import "./nav-main";
+@import "./nav-main";
 // @import "./nav-breadcrumb.scss";
 // @import "./icons.scss";
 // @import "./jumbotron.scss";
 // @import "./footer.scss";
-// @import "./brand.scss";
+@import "./brand.scss";
 
 html,
 body{

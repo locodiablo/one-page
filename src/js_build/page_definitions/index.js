@@ -43,7 +43,6 @@ const project_brand = {
     }
   ]
 }
-
 const project_ui = {
   class: "bg-light",
   media: {
@@ -77,9 +76,6 @@ const project_ui = {
     }
   ]
 }
-
-
-//
 const ctas = [
   {
     colClass: "col-12 mb-4",
@@ -124,7 +120,71 @@ const page_content = {
     description: `Welcome to the ${vars.site_name_full} website: browse my brand, design and UI work.`
   },
   body:[
-    "homepage"
+    `
+        <div class="tab-content text-center h-100" id="tab-content">
+
+          <div class="tab-pane fade text-center show active h-100" id="content-home" style="background: #eee">
+            <div class="container-xl h-100">
+              <div class="row align-items-center h-100 justify-content-center">
+
+                <div class="col-12 col-sm-8 col-md-6 text-center pt-2">
+                  <img class="w-25 d-block my-4 mx-auto" src="/assets/images/brand_vector/logo-sr.svg" alt="Simon Rollett: Design Director">
+
+                  <h1 class="h3 has-subtitle strong">SIMON ROLLETT</h1>
+                  <h2 class="h5">DESIGN DIRECTOR</h2>
+                  <div class="text-list">
+                    <div class="text-list-item mx-auto small py-2">
+                      Former Lead Designer at Policy Expert: fast-growing UK insurer and number 1 rated UK home insurance provider on Review Centre, founder of MadJester Clothing
+                    </div>
+                  </div>
+                  <div class="row justify-content-center">
+                    <div class="col-10 col-md-9 col-lg-10 col-xl-6">
+                      <div class="row justify-content-center btn-grouped my-4">
+
+                          <div class="col-12 mb-4">
+                            <a href="/gallery/" class=" px-0 btn btn-black-outline d-block " data-my-menu="2">
+                              <i class="site-icon d-none d-sm-inline-block nav-fas fas fa-arrow-right mr-2"></i>GALLERY
+                            </a>
+                          </div>
+                          <div class="col-6">
+                            <a href="/about/download-cv" class="j-cv px-0 btn btn-black-outline d-block " data="">
+                              <i class="site-icon d-none d-sm-inline-block nav-fas fas fa-arrow-right mr-2"></i>CV
+                            </a>
+                          </div>
+                          <div class="col-6 ">
+                            <a href="/career/" class="j-t-menu px-0 btn btn-black-outline d-block " data-my-menu="1">
+                              <i class="site-icon d-none d-sm-inline-block nav-fas fas fa-arrow-right mr-2"></i>Career
+                            </a>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade text-center h-100" id="content-contact" style="background: #ccc">
+            <div class="container-xl h-100">
+              <h1 class="py-4">Contact</h1>
+            </div>
+          </div>
+
+          <div class="tab-pane fade text-center h-100" id="content-cv">
+            <h1 class="py-4">CV</h1>
+          </div>
+
+          <div class="tab-pane fade text-center h-100" id="content-gallery">
+            <h1 class="py-4">Gallery</h1>
+          </div>
+
+          <div class="tab-pane fade text-center h-100" id="content-career">
+            <h1 class="py-4">Career</h1>
+          </div>
+
+      </div>
+    `
   ],
   footer:[]
 };

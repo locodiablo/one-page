@@ -1,0 +1,56 @@
+.modal-nav{
+
+  .modal,
+  .modal-backdrop{
+    top: $modal-top;
+    padding-bottom: $modal-top;
+  }
+
+  .modal{
+    .modal-dialog{
+      right: auto;
+    }
+    &.fade{
+      .modal-dialog {
+        -webkit-transition: -webkit-transform .3s ease-out;
+        -moz-transition: -moz-transform .3s ease-out;
+        -o-transition: -o-transform .3s ease-out;
+        transition: transform .3s ease-out;
+        transform: translate(0, -50px);
+        width: 100%;
+        padding-bottom: $modal-top;
+        margin: 0 auto;
+      }
+    }
+    &.show{
+      .modal-dialog {
+        transform: none;
+        right: auto;
+      }
+    }
+  }
+
+  .modal-dialog{
+    right: 0;
+    .modal-content{
+      width: 100%;
+      background: transparent;
+
+      .modal-header{
+        background: transparent;
+        padding-right: $grid-gutter-width/2;
+        .modal-title{
+          text-align: left;
+        }
+      }
+
+      .modal-body{
+        padding: 0 0 $grid-gutter-width;
+      }
+
+    }
+    .modal-footer{
+      display: none;
+    }
+  }
+}

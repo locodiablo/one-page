@@ -1,0 +1,35 @@
+$opacity_disabled: 0.2;
+//
+$default-font: 'Helvetica','Arial',sans-serif;
+$brand-font: 'Titillium Web',$default-font;
+$brand-font-bold: 'Titillium Web bold',$default-font;
+
+$bg-nav: #eee;
+$btnHoverColor: #ccc;
+$bg-nav-btn: $bg-nav;
+
+$size-btn-text: 1rem;
+
+$width-modal-nav: 90%;
+$width-modal-nav-max: 10rem;
+
+$nav-item-height: 5rem;
+$modal-top: $nav-item-height;
+$modal-top-bg: $bg-nav;
+$gutter: $grid-gutter-width/2;
+
+$width-active-border: 0.2rem;
+$clr-nav-item-border: $modal-header-border-color;
+
+@mixin navHeader{
+  .modal-header {
+    border-radius: 0;
+    padding: 0 1rem;
+    border-bottom: 1px solid $black;
+    .modal-title{
+      height: $nav-item-height;
+      line-height: $nav-item-height;
+      margin-top: 0;
+    }
+  }
+}
