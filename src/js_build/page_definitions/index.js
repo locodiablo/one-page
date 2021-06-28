@@ -123,7 +123,7 @@ const page_content = {
     `
         <div class="tab-content text-center h-100" id="tab-content">
 
-          <div class="tab-pane fade text-center show active h-100" id="content-home" style="background: #eee">
+          <div class="tab-pane fade text-center active-show h-100" id="content-home" role="tabpanel" aria-labelledby="profile-tab" style="background: #eee">
             <div class="container-xl h-100">
               <div class="row align-items-center h-100 justify-content-center">
 

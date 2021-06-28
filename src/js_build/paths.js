@@ -11,23 +11,23 @@ const paths = {
   menuData: {
     "contact": {
       text: "Contact",
-      href: "#content-contact"
+      href: "content-contact"
     },
     "cv": {
       text: "CV",
-      href: "#content-cv"
+      href: "content-cv"
     },
     "gallery": {
       text: "Gallery",
-      href: "#content-gallery"
+      href: "content-gallery"
     },
     "career": {
       text: "Career",
-      href: "#content-career"
+      href: "content-career"
     },
     "about": {
       text: "About",
-      href: "#content-about"
+      href: "content-about"
     }
   }
 }

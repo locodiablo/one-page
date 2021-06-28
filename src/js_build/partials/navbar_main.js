@@ -1,6 +1,14 @@
 const paths = require("../paths.js")
 const vars = require("../vars.js")
 const functions = require("../functions.js")
+const navTab = function(data){
+  const navItem = paths.menuData[data]
+  return `
+  <a href="#${navItem.href}" data-toggle="tab--" role="tab" aria-controls="${navItem.href}" aria-selected="false" class="nav-item nav-item-content-${data}">
+    ${navItem.text}
+  </a>
+  `
+}
 
 function navbar(data){return `
   <nav class="navbar navbar-main navbar-expand-sm fixed-top p-0">
@@ -17,23 +25,15 @@ function navbar(data){return `
             })}
             <span class="d-none d-md-inline strong">${vars.site_name}</span>
           </a>
-          <a href="${paths.menuData.contact.href}" class="nav-item nav-item-content-contact">
-            ${paths.menuData.contact.text}
-          </a>
-          <a href="${paths.menuData.cv.href}" class="nav-item nav-item-content-cv">
-            ${paths.menuData.cv.text}
-          </a>
+          ${navTab("contact")}
+          ${navTab("cv")}
         </div>
 
       </div>
 
       <div class="d-none d-sm-flex navbar-expand nav nav-tabs nav-items ml-auto">
-        <a href="${paths.menuData.gallery.href}" class="nav-item nav-item-content-gallery">
-          ${paths.menuData.gallery.text}
-        </a>
-        <a href="${paths.menuData.career.href}" class="nav-item nav-item-content-career">
-          ${paths.menuData.career.text}
-        </a>
+        ${navTab("gallery")}
+        ${navTab("career")}
       </div>
 
       <span class="navbar-toggler j-main-menu" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">

@@ -59,7 +59,12 @@ ${dochead(data)}
     function doTab(data){
       $('.tab-pane.active.show').removeClass("active show");
       $('.navbar-main .nav-item-' + data).addClass("active");
-      $('#' + data).addClass("active show");
+      $('#' + data).addClass(" active");
+      setTimeout(function(){
+        $('#' + data).addClass(" show");
+        console.log('#' + data + ' done')
+      },300)
+
     }
 
     function setDefault(){
