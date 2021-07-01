@@ -132,13 +132,10 @@ const templates = {
     `
   },
   sideNavTypes: {
-    directory: function(incomingLinkData){
-     const navUrl = incomingLinkData.data.path.replace("src/js_build/page_definitions","")
-     const thisItemClass =
-     incomingLinkData.data.children.length > 1 ? incomingLinkData.exploreClass = 'j-menu ' : ''
+    href: function(incomingLinkData){
      return `
-     <a class="${classNavItem} list-group-item-${incomingLinkData.data.name} ${incomingLinkData.exploreClass} nav-dir list-group-item-${incomingLinkData.thisLinkCount}" data-my-menu="${incomingLinkData.thisLinkCount}" href="${navUrl}">
-         <i class="site-icon nav-fas fas fa-arrow-right mr-2"></i>${incomingLinkData.data.pageData.text}
+     <a class="nav-item list-group-item-${incomingLinkData.value} nav-href" href="#${incomingLinkData.value}">
+         <i class="site-icon nav-fas fas fa-arrow-right mr-2"></i>${incomingLinkData.text}
      </a>
      `
    },
@@ -157,7 +154,7 @@ const templates = {
           ${
             templates.navCarouselItem({
               carouselItemIndex: currentIndex,
-              parentData: data.parentData,
+              //parentData: data.parentData,
               left: data.left,
               right: data.right
             })}
@@ -222,6 +219,14 @@ $(document).ready(function ($) {
 
   // open mobile nav
   $(document).on("click", ".j-main-menu", function(e){
+
+    let newMenuContent = ""
+
+    for(const i in menuData){
+      console.log(`${i}: ${menuData[i].value}`)
+      newMenuContent += templates.sideNavTypes[menuData[i].type](menuData[i])
+    }
+
     resetModalNav()
     renderModalNav({
       modalTitle: templates.linkBack,
@@ -235,83 +240,7 @@ $(document).ready(function ($) {
             text: "Explore"
           }
         }),
-        right: menuData.map((navItem,index) => {
-          let linkData = {
-            data: navItem,
-            thisLinkCount: index
-          }
-          return templates.sideNavTypes[navItem.type](linkData)
-        }).join("")
-      }),
-      bodyClass: modal_nav_class
-    })
-  })
-
-  // contact nav menu
-  $(document).on("click", ".j-contact", function(e){
-    e.preventDefault()
-    resetModalNav()
-    const thisLinkLevel = Number(`${$(this).data("my-menu")}`)
-
-    renderModalNav({
-      modalTitle: '',
-      modalBody: templates.navCarousel({
-        parentData: {
-          description: 'Start exploring!',
-          text: 'Explore'
-        },
-        left: templates.navItemsLink({
-          parentData: {
-            text: "Contact",
-            href: "/about/contact/"
-          }
-        }) + "Ignore those hurtful bus shelter scribblings - these are the fastest ways to get in touch.",
-        right: templates.navItems(contacts)
-      }),
-      bodyClass: modal_nav_class
-    })
-    toggleContact[`mob${isMobileDevice()}`]()
-  })
-
-  $(document).on("click", ".j-cv", function(e){
-    e.preventDefault()
-    resetModalNav()
-    const thisLinkLevel = Number(`${$(this).data("my-menu")}`)
-
-    renderModalNav({
-      modalTitle: '',
-      modalBody: templates.navCarousel({
-        parentData: {
-          description: '',
-          text: ''
-        },
-        left: `<div class='nav-title'>CV</div>`,
-        right: templates.navItems([
-          {
-            class: "",
-            href: cv.pageCV,
-            icon: "btn-icon fas fa-arrow-right",
-            text: "CV: online"
-          },
-          {
-            class: "",
-            href: cv.pageCVfile,
-            icon: "btn-icon fas fa-file-pdf",
-            text: "CV: PDF"
-          },
-          {
-            class: "",
-            href: cv.pageGalleryWorkFile,
-            icon: "btn-icon fas fa-file-pdf",
-            text: "Work portfolio: PDF"
-          },
-          {
-            class: "",
-            href: cv.pageGalleryArtFile,
-            icon: "btn-icon fas fa-file-pdf",
-            text: "Art portfolio: PDF"
-          }
-        ])
+        right: newMenuContent
       }),
       bodyClass: modal_nav_class
     })
@@ -427,6 +356,40 @@ $(document).ready(function ($) {
 
 })
 
+// nav tabs
+var hash = "";
+
+function doTab(data){
+  $('.tab-pane.active.show').removeClass("active show");
+  $('.navbar-main .nav-item-' + data).addClass("active");
+  $('#' + data).addClass(" active");
+  setTimeout(function(){
+    $(id_modal).hide()
+    $("body .modal-backdrop").remove()
+    $('#' + data).addClass(" show");
+    console.log('#' + data + ' done')
+  },300)
+
+}
+
+function setDefault(){
+  doTab('content-home')
+}
+
+function locationHashChanged() {
+  hash = location.hash.replace(/^#/, '');  // ^ means starting, meaning only match the first hash
+  doTab(hash)
+}
+
+function hashCheck(){
+  location.hash !== "" ? locationHashChanged() : setDefault()
+}
+
+window.onhashchange = hashCheck;
+
+hashCheck()
+// end navtab
+
 $(document).on("slid.bs.carousel",nav_carousel_id,function(e){
   currentIndex = $(nav_carousel_id + ' div.active').index()
   $(`${nav_carousel_id} .item-${currentIndex+1}`).remove()
@@ -435,7 +398,6 @@ $(document).on("slid.bs.carousel",nav_carousel_id,function(e){
 
 $(document).on("slid.bs.carousel",`.page-gallery`,function(e){// wa gallery.id
   currentIndex = $(`.page-gallery` + ' div.active').index()
-  //console.log('currentIndex',currentIndex)
   $(`.gallery-current-index`).text(currentIndex+1)
   lastGalleryIndex = currentIndex+1
   $(`.gallery-tabbed-content .gallery-texts`).removeClass('active show')
@@ -445,14 +407,14 @@ $(document).on("slid.bs.carousel",`.page-gallery`,function(e){// wa gallery.id
 //
 
 $(window).scroll(function () {
-    if ($(window).scrollTop() > scroll_min) {
-        if (scroll_top < ($(window).scrollTop())) {
-            $(classNavMain).addClass("affix")
-        } else {
-            $(classNavMain).removeClass("affix")
-        }
-    } else {
-        $(classNavMain).removeClass("affix")
-    }
-    scroll_top = $(window).scrollTop()
+  if ($(window).scrollTop() > scroll_min) {
+      if (scroll_top < ($(window).scrollTop())) {
+          $(classNavMain).addClass("affix")
+      } else {
+          $(classNavMain).removeClass("affix")
+      }
+  } else {
+      $(classNavMain).removeClass("affix")
+  }
+  scroll_top = $(window).scrollTop()
 })

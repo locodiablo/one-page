@@ -4,7 +4,7 @@ const functions = require("../functions.js")
 const navTab = function(data){
   const navItem = paths.menuData[data]
   return `
-  <a href="#${navItem.href}" data-toggle="tab--" role="tab" aria-controls="${navItem.href}" aria-selected="false" class="nav-item nav-item-content-${data}">
+  <a href="#${navItem.value}" data-toggle="tab--" role="tab" aria-controls="${navItem.value}" aria-selected="false" class="nav-item nav-item-content-${data}">
     ${navItem.text}
   </a>
   `
@@ -32,6 +32,7 @@ function navbar(data){return `
       </div>
 
       <div class="d-none d-sm-flex navbar-expand nav nav-tabs nav-items ml-auto">
+        ${navTab("about")}
         ${navTab("gallery")}
         ${navTab("career")}
       </div>

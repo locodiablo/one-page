@@ -54,35 +54,37 @@ ${dochead(data)}
 
   $(document).ready(function ($) {
 
-    var hash = "";
-
-    function doTab(data){
-      $('.tab-pane.active.show').removeClass("active show");
-      $('.navbar-main .nav-item-' + data).addClass("active");
-      $('#' + data).addClass(" active");
-      setTimeout(function(){
-        $('#' + data).addClass(" show");
-        console.log('#' + data + ' done')
-      },300)
-
-    }
-
-    function setDefault(){
-      doTab('content-home')
-    }
-
-    function locationHashChanged() {
-      hash = location.hash.replace(/^#/, '');  // ^ means starting, meaning only match the first hash
-      doTab(hash)
-    }
-
-    function hashCheck(){
-      location.hash !== "" ? locationHashChanged() : setDefault()
-    }
-
-    window.onhashchange = hashCheck;
-
-    hashCheck()
+    // var hash = "";
+    //
+    // function doTab(data){
+    //   $('.tab-pane.active.show').removeClass("active show");
+    //   $('.navbar-main .nav-item-' + data).addClass("active");
+    //   $('#' + data).addClass(" active");
+    //   setTimeout(function(){
+    //     $(id_modal).hide()
+    //     $("body .modal-backdrop").remove()
+    //     $('#' + data).addClass(" show");
+    //     console.log('#' + data + ' done')
+    //   },300)
+    //
+    // }
+    //
+    // function setDefault(){
+    //   doTab('content-home')
+    // }
+    //
+    // function locationHashChanged() {
+    //   hash = location.hash.replace(/^#/, '');  // ^ means starting, meaning only match the first hash
+    //   doTab(hash)
+    // }
+    //
+    // function hashCheck(){
+    //   location.hash !== "" ? locationHashChanged() : setDefault()
+    // }
+    //
+    // window.onhashchange = hashCheck;
+    //
+    // hashCheck()
 
   })
 

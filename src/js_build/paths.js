@@ -11,23 +11,28 @@ const paths = {
   menuData: {
     "contact": {
       text: "Contact",
-      href: "content-contact"
+      type: "href",
+      value: "content-contact"
     },
     "cv": {
       text: "CV",
-      href: "content-cv"
+      type: "href",
+      value: "content-cv"
     },
     "gallery": {
       text: "Gallery",
-      href: "content-gallery"
+      type: "href",
+      value: "content-gallery"
     },
     "career": {
       text: "Career",
-      href: "content-career"
+      type: "href",
+      value: "content-career"
     },
     "about": {
       text: "About",
-      href: "content-about"
+      type: "href",
+      value: "content-about" 
     }
   }
 }

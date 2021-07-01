@@ -183,6 +183,10 @@ const page_content = {
             <h1 class="py-4">Career</h1>
           </div>
 
+          <div class="tab-pane fade text-center h-100" id="content-about">
+            <h1 class="py-4">About</h1>
+          </div>
+
       </div>
     `
   ],
