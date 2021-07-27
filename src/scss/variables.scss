@@ -21,6 +21,10 @@ $gutter: $grid-gutter-width/2;
 $width-active-border: 0.2rem;
 $clr-nav-item-border: $modal-header-border-color;
 
+$sunset_0: #FFF5D3;
+$sunset_1: #E87523;
+$sunset_2: #2E1407;
+
 @mixin navHeader{
   .modal-header {
     border-radius: 0;

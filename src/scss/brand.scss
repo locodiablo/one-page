@@ -1,9 +1,12 @@
 @import "./brand/brand-font.scss";
+@import "./brand/brand-buttons.scss";
 @import "./brand/brand-text.scss";
 @import "./brand/brand-carousel.scss";
 @import "./brand/brand-carousel-nav.scss";
 @import "./brand/brand-nav.scss";
 @import "./brand/brand-animations.scss";
+@import "./brand/brand-jumbotron.scss";
+@import "./brand/brand-media.scss";
 
 
 
@@ -11,6 +14,16 @@
 // radial-gradient(circle at 75% 0%, #fff, #0a9cf7, #081157, #000000)
 // sunset
 // radial-gradient(circle at 75% 20%, #fcecc0, #faac05, #543103)
+
+body{
+  .bg-sunset{
+    background: radial-gradient(circle at 100% 20%, $sunset_0 2%, $sunset_1 20%, $sunset_2 105%);
+  }
+  .bg-dark{
+    background: radial-gradient(circle at 5% 20%, #444, #000);
+    // background: radial-gradient(ellipse at bottom left, #777, #555, $primary);
+  }
+}
 
 @include media-breakpoint-up(sm){
   // .md-100{

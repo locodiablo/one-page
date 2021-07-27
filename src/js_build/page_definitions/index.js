@@ -1,7 +1,7 @@
 const vars = require("../vars.js")
 const paths = require("../paths.js")
 const functions = require("../functions.js")
-// const template_jumbotron = require("../templates/template_jumbotron")
+const template_jumbotron = require("../templates/template_jumbotron")
 // const template_jumbotron_project = require("../templates/template_jumbotron_project")
 // const template_jumbotron_project2 = require("../templates/template_jumbotron_project2")
 
@@ -109,6 +109,17 @@ const ctas = [
   }
 ]
 
+
+const tab_content = function(data){
+  return `
+  <div class="tab-pane fade text-center h-100--" id="content-${data.id}" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="container-xl h-100">
+      <h1 class="py-4">${data.title}</h1>
+    </div>
+  </div>
+  `
+}
+
 const page_content = {
   config: {
     html_template: "template_page_master",
@@ -121,10 +132,10 @@ const page_content = {
   },
   body:[
     `
-        <div class="tab-content text-center h-100" id="tab-content">
+        <div class="tab-content text-center h-100--" id="tab-content">
 
-          <div class="tab-pane fade text-center active-show h-100" id="content-home" role="tabpanel" aria-labelledby="profile-tab" style="background: #eee">
-            <div class="container-xl h-100">
+          <div class="tab-pane fade text-center active-show h-100--" id="content-home" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="container-xl h-100--">
               <div class="row align-items-center h-100 justify-content-center">
 
                 <div class="col-12 col-sm-8 col-md-6 text-center pt-2">
@@ -163,13 +174,58 @@ const page_content = {
                 </div>
               </div>
             </div>
+
+            ${template_jumbotron({
+              class: "jumbotron-beefy",
+              title: functions.render_link({
+                class: "text-link",
+                text: "Brand",
+                href: "/"
+              }),
+              subtitle: "Asset management",
+              description: "Configuring brand assets for multi-media efficient consistency",
+              align: "right",
+              secondary: "bing"
+            })}
+
+            ${template_jumbotron({
+              class: "jumbotron-beefy bg-dark",
+              title: functions.render_link({
+                class: "text-link",
+                text: "UI/UX",
+                href: "/"
+              }),
+              subtitle: "Defining journeys",
+              description: "Examples for home insurance and online clothing retail",
+              align: "left",
+              secondary: `
+                <div class="phone col-10 col-sm-8 col-md-6">
+                  <div class="inner">
+                    <img src="/assets/images/gallery/ui-design/insurance-questions/question-start.svg" alt="jam">
+                  </div>
+                </div>
+              `
+            })}
+
+            ${template_jumbotron({
+              class: "jumbotron-beefy bg-sunset",
+              title: functions.render_link({
+                class: "text-link",
+                text: "Art",
+                href: "/"
+              }),
+              subtitle: "Private commissions",
+              description: "Pencil, biro, stylus - whatever it takes",
+              align: "right",
+              secondary: `<img src="/assets/images/brand/lego-all-0.png" class="d-block w-100" alt="Lego">`
+            })}
+
           </div>
 
-          <div class="tab-pane fade text-center h-100" id="content-contact" style="background: #ccc">
-            <div class="container-xl h-100">
-              <h1 class="py-4">Contact</h1>
-            </div>
-          </div>
+          ${tab_content({
+            id: "contact",
+            title: "Contact"
+          })}
 
           <div class="tab-pane fade text-center h-100" id="content-cv">
             <h1 class="py-4">CV</h1>
