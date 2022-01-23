@@ -7,7 +7,7 @@ const paths = {
   templatesDir: "../src/js_build/templates",
   definitionsDir: "src/js_build/page_definitions",
   imagesDir: "./src/assets/images",
-  imagesSimonRLogo: "/assets/images/brand_vector/logo-sr.svg",
+  imagesSimonRLogo: "/assets/images/brand_vector/simon-rollett-logo-5.svg",
   menuData: {
     "contact": {
       text: "Contact",
@@ -32,7 +32,7 @@ const paths = {
     "about": {
       text: "About",
       type: "href",
-      value: "content-about" 
+      value: "content-about"
     }
   }
 }

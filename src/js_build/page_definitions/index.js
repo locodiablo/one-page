@@ -1,6 +1,7 @@
 const vars = require("../vars.js")
 const paths = require("../paths.js")
 const functions = require("../functions.js")
+const img_logo = require("../partials/img_logo.js")
 const template_jumbotron = require("../templates/template_jumbotron")
 // const template_jumbotron_project = require("../templates/template_jumbotron_project")
 // const template_jumbotron_project2 = require("../templates/template_jumbotron_project2")
@@ -112,8 +113,8 @@ const ctas = [
 
 const tab_content = function(data){
   return `
-  <div class="tab-pane fade text-center h-100--" id="content-${data.id}" role="tabpanel" aria-labelledby="profile-tab">
-    <div class="container-xl h-100">
+  <div class="tab-pane fade text-center h-100 align-items-center justify-content-center" id="content-${data.id}" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="container-xl">
       <h1 class="py-4">${data.title}</h1>
     </div>
   </div>
@@ -124,7 +125,7 @@ const page_content = {
   config: {
     html_template: "template_page_master",
     nav_text: "Home",
-    body_class: `homepage`
+    body_class: ``
   },
   head:{
     title: vars.site_name_full,
@@ -132,9 +133,9 @@ const page_content = {
   },
   body:[
     `
-        <div class="tab-content text-center h-100--" id="tab-content">
+        <div class="tab-content text-center" id="tab-content">
 
-          <div class="tab-pane fade text-center active-show h-100--" id="content-home" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="tab-pane fade text-center active-show-- h-100 align-items-center" id="content-home---" role="tabpanel" aria-labelledby="profile-tab">
             <div class="container-xl h-100--">
               <div class="row align-items-center h-100 justify-content-center">
 
@@ -207,19 +208,35 @@ const page_content = {
               `
             })}
 
-            ${template_jumbotron({
-              class: "jumbotron-beefy bg-sunset",
-              title: functions.render_link({
-                class: "text-link",
-                text: "Art",
-                href: "/"
-              }),
-              subtitle: "Private commissions",
-              description: "Pencil, biro, stylus - whatever it takes",
-              align: "right",
-              secondary: `<img src="/assets/images/brand/lego-all-0.png" class="d-block w-100" alt="Lego">`
-            })}
+          </div>
 
+          <div class="tab-pane bg-sunset fade text-center h-100 align-items-center justify-content-center active show" id="content-home" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="container-xl homepage-logo-container">
+
+              <div class="row justify-content-center homepage-logo">
+                <div class="col-8 col-sm-6 col-md-4 col-xl-2">
+                  ${img_logo({id: 'logo_main',class: 'invert'})}
+                </div>
+                <h4 class="col-12 fg-white brand-font pt-2 m-0" style="text-transform: uppercase">Designer</h4>
+              </div>
+
+              <div class="row justify-content-center homepage-options">
+                <div class="col-12 col-sm-8 col-md-6">
+                  <div class="row justify-content-center">
+                    <div class="col-4">
+                      <a href="#${paths.menuData['cv'].value}" class="btn btn-1">CV</a>
+                    </div>
+                    <div class="col-4">
+                      <a href="#${paths.menuData['gallery'].value}" class="btn btn-1">Portfolio</a>
+                    </div>
+                    <div class="col-4">
+                      <a href="#${paths.menuData['contact'].value}" class="btn btn-1">Contact</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
 
           ${tab_content({
@@ -227,21 +244,25 @@ const page_content = {
             title: "Contact"
           })}
 
-          <div class="tab-pane fade text-center h-100" id="content-cv">
-            <h1 class="py-4">CV</h1>
-          </div>
+          ${tab_content({
+            id: "cv",
+            title: "CV"
+          })}
 
-          <div class="tab-pane fade text-center h-100" id="content-gallery">
-            <h1 class="py-4">Gallery</h1>
-          </div>
+          ${tab_content({
+            id: "gallery",
+            title: "Gallery"
+          })}
 
-          <div class="tab-pane fade text-center h-100" id="content-career">
-            <h1 class="py-4">Career</h1>
-          </div>
+          ${tab_content({
+            id: "career",
+            title: "Career"
+          })}
 
-          <div class="tab-pane fade text-center h-100" id="content-about">
-            <h1 class="py-4">About</h1>
-          </div>
+          ${tab_content({
+            id: "about",
+            title: "About"
+          })}
 
       </div>
     `

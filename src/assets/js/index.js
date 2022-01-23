@@ -20,17 +20,17 @@ let classBody = ''
 let lastActiveNav = 0
 let gallery = ''
 
-const navigation = {
-  "Home": {
-    url: "/"
-  },
-  "About": {
-    url: "/about"
-  },
-  "gallery": {
-    url: "/gallery"
-  }
-}
+// const navigation = {
+//   "Home": {
+//     url: "/"
+//   },
+//   "About": {
+//     url: "/about"
+//   },
+//   "gallery": {
+//     url: "/gallery"
+//   }
+// }
 
 
 function isMobileDevice() {
@@ -40,18 +40,18 @@ function isMobileDevice() {
   return check;
 }
 
-const toggleContact = {
-    mobtrue: function(data) {
-        $(".contact-info").addClass("d-none")
-        $(".contact-action").removeClass("d-none")
-        //console.log('showing mobiles')
-    },
-    mobfalse: function(data) {
-        $(".contact-info").removeClass("d-none")
-        $(".contact-action").addClass("d-none")
-        //console.log('hiding mobiles')
-    }
-}
+// const toggleContact = {
+//     mobtrue: function(data) {
+//         $(".contact-info").addClass("d-none")
+//         $(".contact-action").removeClass("d-none")
+//         //console.log('showing mobiles')
+//     },
+//     mobfalse: function(data) {
+//         $(".contact-info").removeClass("d-none")
+//         $(".contact-action").addClass("d-none")
+//         //console.log('hiding mobiles')
+//     }
+// }
 
 function do_modal(data) {
   classBody = data.class
@@ -340,7 +340,7 @@ $(document).ready(function ($) {
       $("body").addClass(classScrollActive) : $("body").removeClass(classScrollActive)
   }
 
-  toggleContact[`mob${isMobileDevice()}`]()
+  //toggleContact[`mob${isMobileDevice()}`]()
 
 })
 
@@ -349,7 +349,10 @@ var hash = "";
 
 function doTab(data){
   $('.tab-pane.active.show').removeClass("active show");
-  $('.navbar-main .nav-item-' + data).addClass("active");
+   $('.navbar-main .nav-item-' + data).addClass("active");
+  //
+  $('body').addClass(hash);
+  //
   $('#' + data).addClass(" active");
   setTimeout(function(){
     $(id_modal).hide()
@@ -365,6 +368,8 @@ function setDefault(){
 }
 
 function locationHashChanged() {
+  $('body').removeClass(hash);
+  $('.navbar-main .nav-item-' + hash).removeClass("active");
   hash = location.hash.replace(/^#/, '');  // ^ means starting, meaning only match the first hash
   doTab(hash)
 }

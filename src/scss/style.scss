@@ -19,6 +19,14 @@ body{
   height: 100%;
 }
 
+#tab-content{
+  height: 100vh;
+}
+
+.tab-content>.active {
+    display: flex;
+}
+
 // .homepage{
 //   .nav-crumbs{
 //     display: none;
