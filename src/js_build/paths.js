@@ -8,6 +8,8 @@ const paths = {
   definitionsDir: "src/js_build/page_definitions",
   imagesDir: "./src/assets/images",
   imagesSimonRLogo: "/assets/images/brand_vector/simon-rollett-logo-5.svg",
+  urlLinkedIn: 'https://www.linkedin.com/in/sjrollett/',
+  urlGit: 'https://github.com/locodiablo',
   menuData: {
     "contact": {
       text: "Contact",

@@ -3,7 +3,7 @@ $opacity_disabled: 0.2;
 $default-font: 'Helvetica','Arial',sans-serif;
 $brand-fontT: 'Titillium Web',$default-font;
 $brand-font: 'Outfit',$default-font;
-$brand-font-bold: 'Titillium Web bold',$default-font;
+$brand-font-bold: 'Outfit',$default-font;
 
 $bg-nav: #eee;
 $btnHoverColor: #ccc;
@@ -36,16 +36,5 @@ $sunset_2: #2E1407;
       line-height: $nav-item-height;
       margin-top: 0;
     }
-  }
-}
-
-@mixin orientation($direction) {
-  $orientation-landscape: "(orientation:landscape)";
-  $orientation-portrait: "(orientation:portrait)";
-  @if $direction == landscape {
-    @media #{$orientation-landscape} { @content; }
-  }
-  @if $direction == portrait {
-    @media #{$orientation-portrait} { @content; }
   }
 }

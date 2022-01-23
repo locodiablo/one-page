@@ -19,16 +19,17 @@ body{
   height: 100%;
 }
 
-#tab-content{
-  height: 100vh;
-}
-
 .tab-content>.active {
     display: flex;
 }
 
-// .homepage{
-//   .nav-crumbs{
-//     display: none;
-//   }
-// }
+.tab-content{
+  min-height: 100vh;
+  .tab-pane{
+    padding-top: $nav-item-height;
+    min-height: 100vh;
+    &.bg-sunset{
+      padding-top: 0;
+    }
+  }
+}

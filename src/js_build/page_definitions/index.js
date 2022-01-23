@@ -2,124 +2,97 @@ const vars = require("../vars.js")
 const paths = require("../paths.js")
 const functions = require("../functions.js")
 const img_logo = require("../partials/img_logo.js")
-const template_jumbotron = require("../templates/template_jumbotron")
-// const template_jumbotron_project = require("../templates/template_jumbotron_project")
-// const template_jumbotron_project2 = require("../templates/template_jumbotron_project2")
-
-//
-const project_brand = {
-  class: "bg-primary-fade",
-  media: {
-    type: "phone",
-    dir: "/assets/images/gallery/brand/madjester/",
-    src: "mj-identity.svg"
-  },
-  title: "Brand design",
-  subtitle: "MadJester Clothing",
-  features: [
-    "A new lifestyle brand for unique, durable clothing that values being different."
-  ],
-  primary: {
-    class: "twist twist-right pull-sm-t"
-  },
-  secondary: {
-    class: ""
-  },
-  actions: [
-    {
-      colClass: "col-6",
-      class: "j-demo-site btn-white-outline",
-      href: "/gallery/brand/madjester",
-      text: "Site demo",
-      data: {
-        key: "demo",
-        value: "madjester"
-      }
-    },
-    {
-      colClass: "col-6",
-      class: "btn-white",
-      href: "/gallery/brand/madjester",
-      text: vars.text.detail
-    }
-  ]
-}
-const project_ui = {
-  class: "bg-light",
-  media: {
-    type: "phone",
-    dir: "/assets/images/gallery/ui-design/insurance-questions/",
-    src: "question-start.svg"
-  },
-  title: "Pixels in a row",
-  subtitle: "Policy Expert insurance",
-  features: [
-    "Asset management helping this fast-growing insurer build recognition."
-  ],
-  primary: {
-    class: "twist twist-left order-sm-last"
-  },
-  secondary: {
-    class: "text-md-right"
-  },
-  actions: [
-    {
-      colClass: "col-6",
-      class: "btn-thin",
-      href: "/gallery/brand/policy-expert",
-      text: "Brand"
-    },
-    {
-      colClass: "col-6",
-      class: "btn-black",
-      href: "/gallery/ui-design/insurance-questions",
-      text: vars.text.detail
-    }
-  ]
-}
-const ctas = [
-  {
-    colClass: "col-12 mb-4",
-    text: `<i class="site-icon d-none d-sm-inline-block nav-fas fas fa-arrow-right mr-2"></i>GALLERY`,
-    href: paths.pageGallery,
-    class: " px-0",
-    data: {
-      name: "-my-menu",
-      value: "2"
-    }
-  },
-  {
-    colClass: "col-6",
-    text: `<i class="site-icon d-none d-sm-inline-block nav-fas fas fa-arrow-right mr-2"></i>CV`,
-    href: paths.pageCV,
-    class: "j-cv px-0",
-    data: {
-      name: "",
-      value: ""
-    }
-  },
-  {
-    colClass: "col-6 ",
-    text: `<i class="site-icon d-none d-sm-inline-block nav-fas fas fa-arrow-right mr-2"></i>Career`,
-    href: paths.pageCareer,
-    class: "j-t-menu px-0",
-    data: {
-      name: "-my-menu",
-      value: "1"
-    }
-  }
-]
-
 
 const tab_content = function(data){
   return `
-  <div class="tab-pane fade text-center h-100 align-items-center justify-content-center" id="content-${data.id}" role="tabpanel" aria-labelledby="profile-tab">
+  <div class="tab-pane fade text-center align-items-center justify-content-center" id="content-${data.id}" role="tabpanel" aria-labelledby="profile-tab">
     <div class="container-xl">
       <h1 class="py-4">${data.title}</h1>
+      <div class="pb-4">
+        ${data.content}
+      </div>
     </div>
   </div>
   `
 }
+
+const content_contact = `
+
+  <div class="row justify-content-center">
+    <div class="nav-items col-12 col-md-6 col-lg-4 text-left">
+      <p class="pb-4 pmb-4">Ignore those hurtful bus shelter scribblings - these are the fastest ways to get in touch:</p>
+      ${vars.profileLinks.map(eachLink => `
+        <a class="d-block mb-4 nav-item ${eachLink.class}" href="${eachLink.href}">
+          <span class="btn-1 ${eachLink.icon} mr-4"></span>${eachLink.text}
+        </a>
+      `).join("")}
+    </div>
+  </div>
+`
+
+const content_gallery = `
+  <h2>Text</h2>
+  <h3><b>More</b></h3>
+  <div class="row justify-content-center">
+    <div class="nav-items col-12 col-md-6 text-left">
+        <p class="strong text-center my-4">
+          Intro:
+        </p>
+        <p class="my-4">
+          Desc.
+        </p>
+
+        <div class="row justify-content-center my-4">
+          <div class="nav-items col-12 col-lg-6 text-left">
+            <a class="d-block mb-4 nav-item" href="#content-contact">
+              <span class="btn-1 btn-icon fas ${vars.profileLinks[1].icon} mr-4"></span>Contact
+            </a>
+          </div>
+          <div class="nav-items col-12 col-lg-6 text-left">
+            <a class="d-block mb-4 nav-item" href="#content-cv">
+              <span class="btn-1 btn-icon fas fa-file mr-4"></span>CV
+            </a>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+`
+
+const content_about = `
+  <div class="row justify-content-center">
+    <div class="nav-items col-12 col-md-6 text-center">
+      <h2>A cross-discipline creative, optimising digital design for over 20 years</h2>
+        <p class="strong text-center my-4">
+          Some past and present fascinations:
+        </p>
+        <p class="my-4 text-left">
+          Unguarded biscuits.
+          Beaches (winter, summer, rain or shine).
+          Motorbikes - especially the crazy-fast ones.
+          Badminton and squash so I can run around and hit things with impunity. Kickboxing (W-2 L-1 D-0) for resolving biscuit ownership disputes.
+          Games - nerdishly mesmerised by the the attention to detail in Assassin’s Creed: Odyssey on PlayStation.
+          Sublime technology: electric vehicles and genetics.
+        </p>
+
+        <div class="row justify-content-center my-4">
+          <div class="nav-items col-12 col-lg-6 text-left">
+            <a class="d-block mb-4 nav-item" href="#content-contact">
+              <span class="btn-1 btn-icon fas ${vars.profileLinks[1].icon} mr-4"></span>Contact
+            </a>
+          </div>
+          <div class="nav-items col-12 col-lg-6 text-left">
+            <a class="d-block mb-4 nav-item" href="#content-cv">
+              <span class="btn-1 btn-icon fas fa-file mr-4"></span>CV
+            </a>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+`
 
 const page_content = {
   config: {
@@ -135,103 +108,18 @@ const page_content = {
     `
         <div class="tab-content text-center" id="tab-content">
 
-          <div class="tab-pane fade text-center active-show-- h-100 align-items-center" id="content-home---" role="tabpanel" aria-labelledby="profile-tab">
-            <div class="container-xl h-100--">
-              <div class="row align-items-center h-100 justify-content-center">
+          <div class="tab-pane bg-sunset fade text-center align-items-center justify-content-center active show" id="content-home" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="container-xl homepage-poster-container">
 
-                <div class="col-12 col-sm-8 col-md-6 text-center pt-2">
-                  <img class="w-25 d-block my-4 mx-auto" src="/assets/images/brand_vector/logo-sr.svg" alt="Simon Rollett: Design Director">
+              <div class="row homepage-poster-row">
 
-                  <h1 class="h3 has-subtitle strong">SIMON ROLLETT</h1>
-                  <h2 class="h5">DESIGN DIRECTOR</h2>
-                  <div class="text-list">
-                    <div class="text-list-item mx-auto small py-2">
-                      Former Lead Designer at Policy Expert: fast-growing UK insurer and number 1 rated UK home insurance provider on Review Centre, founder of MadJester Clothing
-                    </div>
-                  </div>
-                  <div class="row justify-content-center">
-                    <div class="col-10 col-md-9 col-lg-10 col-xl-6">
-                      <div class="row justify-content-center btn-grouped my-4">
-
-                          <div class="col-12 mb-4">
-                            <a href="/gallery/" class=" px-0 btn btn-black-outline d-block " data-my-menu="2">
-                              <i class="site-icon d-none d-sm-inline-block nav-fas fas fa-arrow-right mr-2"></i>GALLERY
-                            </a>
-                          </div>
-                          <div class="col-6">
-                            <a href="/about/download-cv" class="j-cv px-0 btn btn-black-outline d-block " data="">
-                              <i class="site-icon d-none d-sm-inline-block nav-fas fas fa-arrow-right mr-2"></i>CV
-                            </a>
-                          </div>
-                          <div class="col-6 ">
-                            <a href="/career/" class="j-t-menu px-0 btn btn-black-outline d-block " data-my-menu="1">
-                              <i class="site-icon d-none d-sm-inline-block nav-fas fas fa-arrow-right mr-2"></i>Career
-                            </a>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-
-            ${template_jumbotron({
-              class: "jumbotron-beefy",
-              title: functions.render_link({
-                class: "text-link",
-                text: "Brand",
-                href: "/"
-              }),
-              subtitle: "Asset management",
-              description: "Configuring brand assets for multi-media efficient consistency",
-              align: "right",
-              secondary: "bing"
-            })}
-
-            ${template_jumbotron({
-              class: "jumbotron-beefy bg-dark",
-              title: functions.render_link({
-                class: "text-link",
-                text: "UI/UX",
-                href: "/"
-              }),
-              subtitle: "Defining journeys",
-              description: "Examples for home insurance and online clothing retail",
-              align: "left",
-              secondary: `
-                <div class="phone col-10 col-sm-8 col-md-6">
-                  <div class="inner">
-                    <img src="/assets/images/gallery/ui-design/insurance-questions/question-start.svg" alt="jam">
-                  </div>
-                </div>
-              `
-            })}
-
-          </div>
-
-          <div class="tab-pane bg-sunset fade text-center h-100 align-items-center justify-content-center active show" id="content-home" role="tabpanel" aria-labelledby="profile-tab">
-            <div class="container-xl homepage-logo-container">
-
-              <div class="row justify-content-center homepage-logo">
-                <div class="col-8 col-sm-6 col-md-4 col-xl-2">
+                <div class="homepage-poster-content">
                   ${img_logo({id: 'logo_main',class: 'invert'})}
-                </div>
-                <h4 class="col-12 fg-white brand-font pt-2 m-0" style="text-transform: uppercase">Designer</h4>
-              </div>
-
-              <div class="row justify-content-center homepage-options">
-                <div class="col-12 col-sm-8 col-md-6">
-                  <div class="row justify-content-center">
-                    <div class="col-4">
-                      <a href="#${paths.menuData['cv'].value}" class="btn btn-1">CV</a>
-                    </div>
-                    <div class="col-4">
-                      <a href="#${paths.menuData['gallery'].value}" class="btn btn-1">Portfolio</a>
-                    </div>
-                    <div class="col-4">
-                      <a href="#${paths.menuData['contact'].value}" class="btn btn-1">Contact</a>
-                    </div>
+                  <h4 class="homepage-poster-title brand-font py-2 pb-md-4">Designer</h4>
+                  <div class="homepage-poster-options">
+                    <a href="#${paths.menuData['cv'].value}" class="btn btn-1">CV</a>
+                    <a href="#${paths.menuData['gallery'].value}" class="btn btn-1">Gallery</a>
+                    <a href="#${paths.menuData['contact'].value}" class="btn btn-1">Contact</a>
                   </div>
                 </div>
               </div>
@@ -241,27 +129,32 @@ const page_content = {
 
           ${tab_content({
             id: "contact",
-            title: "Contact"
+            title: "Contact",
+            content: content_contact
           })}
 
           ${tab_content({
             id: "cv",
-            title: "CV"
+            title: "CV",
+            content: ''
           })}
 
           ${tab_content({
             id: "gallery",
-            title: "Gallery"
+            title: "Gallery",
+            content: content_gallery
           })}
 
           ${tab_content({
             id: "career",
-            title: "Career"
+            title: "Career",
+            content: ''
           })}
 
           ${tab_content({
             id: "about",
-            title: "About"
+            title: "About",
+            content: content_about
           })}
 
       </div>

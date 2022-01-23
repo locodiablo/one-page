@@ -39,28 +39,28 @@ const vars = {
     {"WordPress": 10}
   ],
   profileLinks: [
-    {
-      href: 'tel: 07748024641',
-      text: "Call now",
-      class: 'contact-action d-none',
-      icon: 'btn-icon fas fa-phone'
-    },
+    // {
+    //   href: 'tel: 07748024641',
+    //   text: "Call now",
+    //   class: 'contact-action d-none',
+    //   icon: 'btn-icon fas fa-phone'
+    // },
     {
       href: 'tel:07748024641',
       text: "07748 024641",
-      class: 'contact-info d-none',
+      class: '',
       icon: 'btn-icon fas fa-phone'
     },
-    {
-      href: `mailto: simon@madjester.co.uk`,
-      text: "Email now",
-      class: 'contact-action d-none',
-      icon: 'btn-icon fas fa-envelope'
-    },
+    // {
+    //   href: `mailto: simon@madjester.co.uk`,
+    //   text: "Email now",
+    //   class: 'contact-action d-none-',
+    //   icon: 'btn-icon fas fa-envelope'
+    // },
     {
       href: `simon@madjester.co.uk`,
       text: "simon@madjester.co.uk",
-      class: 'contact-info d-none',
+      class: '',
       icon: 'btn-icon fas fa-envelope'
     },
     {

@@ -7,6 +7,7 @@
 @import "./brand/brand-animations.scss";
 @import "./brand/brand-jumbotron.scss";
 @import "./brand/brand-media.scss";
+@import "./brand/brand-poster.scss";
 
 
 
@@ -18,9 +19,6 @@
 body{
   .bg-sunset{
     background: radial-gradient(circle at 100% 20%, $sunset_0 2%, $sunset_1 20%, $sunset_2 105%);
-    padding-top: 6rem;
-
-
   }
   .bg-midnight{
     background: radial-gradient(circle at 75% 10%, #fff, #0a9cf7, #081157, #000000);
@@ -29,11 +27,6 @@ body{
     background: radial-gradient(circle at 5% 20%, #444, #000);
     // background: radial-gradient(ellipse at bottom left, #777, #555, $primary);
   }
-}
-
-.lego{
-  width: 130%;
-  margin: 0 -15%;
 }
 
 .invert.brand-logo{
@@ -53,36 +46,17 @@ body{
 
 .content-home{
   .navbar-main{
+    border-bottom-color: rgba(255,255,255,0.3);
     .bg-head{
       opacity: .6;
     }
     .nav-item{
       color: $white;
+      border-bottom: solid 0 rgba(255,255,255,0.3);
+      &:hover{
+        border-bottom: solid .5rem rgba(255,255,255,0.3);
+      }
     }
-  }
-}
 
-.homepage-logo-container{
-  height: 100%;
-  position: relative;
-  background-size: 130%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-image: url('/assets/images/brand/lego-all-0.png');
-}
-
-.homepage-logo{
-  //margin-top: 7rem;
-}
-
-.homepage-options{
-  position: absolute;
-  width: 100%;
-  bottom: 5%;
-}
-
-@include media-breakpoint-up(md){
-  .homepage-logo-container{
-    background-size: 70%;
   }
 }

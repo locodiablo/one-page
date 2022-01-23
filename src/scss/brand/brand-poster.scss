@@ -1,0 +1,101 @@
+
+@mixin orientation($direction) {
+  $orientation-landscape: "(orientation:landscape)";
+  $orientation-portrait: "(orientation:portrait)";
+  @if $direction == landscape {
+    @media #{$orientation-landscape} { @content; }
+  }
+  @if $direction == portrait {
+    @media #{$orientation-portrait} { @content; }
+  }
+}
+
+.homepage-poster-container{
+  min-height: 100vh;
+  position: relative;
+  background-size: 130%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url('/assets/images/brand/lego-all-0.png');
+}
+
+.homepage-poster-row{
+  min-height: 100vh;
+  justify-content: center;
+  position: relative;
+
+  .homepage-poster-content{
+    position: relative;
+    width: 100%;
+    //min-height: 100vh;
+  }
+
+  #logo_main{
+    width: 40%;
+    margin: 6rem 30% 0;
+    display: block;
+  }
+
+  .homepage-poster-title{
+    margin: 0 auto;
+    text-transform: uppercase;
+    color: $white;
+  }
+
+  .homepage-poster-options{
+      position: absolute;
+      bottom: 5%;
+      width: 100%;
+
+      .btn{
+        margin: 0 $grid-gutter-width/4;
+        background: rgba(0,0,0,0.6);
+      }
+  }
+}
+
+
+@include orientation(landscape){
+  @include media-breakpoint-down(sm){
+    .homepage-poster-title{
+      font-size: 1rem;
+    }
+  }
+
+  .homepage-poster-row{
+    align-items: center;
+    .homepage-poster-content{
+      width: 50%;
+      margin-left: 50%;
+      #logo_main{
+        margin-top: 0;
+      }
+    }
+
+    .homepage-poster-options{
+      position: relative;
+      bottom: auto;
+    }
+  }
+
+
+  .homepage-poster-container{
+    background-size: 55%;
+    background-position: left center;
+  }
+//@include media-breakpoint-down(sm){
+//}
+  @include media-breakpoint-up(md){
+    .homepage-poster-container{
+      background-size: 60%;
+      background-position: left center;
+    }
+  }
+}
+
+@include media-breakpoint-up(md){
+  .homepage-poster-container{
+    background-size: 55%;
+    background-position: left center;
+  }
+}
