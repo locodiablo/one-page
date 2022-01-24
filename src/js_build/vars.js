@@ -21,7 +21,7 @@ const vars = {
   site_name_caption: "Former Lead Designer at Policy Expert: fast-growing UK insurer and number 1 rated UK home insurance provider on Review Centre, founder of MadJester Clothing",
   brand_font: 'Titillium Web',// Titillium Web
   url_cv: "assets/cv/simon-rollett-i-cv-2022.pdf",
-  url_portfolio: "/assets/cv/simon-rollett-portfolio-v2-2021-z.pdf",
+  url_portfolio: "/assets/cv/simon-rollett-portfolio-v1-2022-z.pdf",
   //logo_src: fs.readFileSync("./src/assets/images/brand_vector/logo-sr.svg", 'utf8'),
 
   skyClasses: [

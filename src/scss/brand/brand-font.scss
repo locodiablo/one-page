@@ -3,27 +3,27 @@
 $brand-font-pathT: "../fonts/TitilliumWeb/";
 $brand-font-path: "../fonts/Outfit/";
 
-// Outfit-VariableFont_wght
-
-@font-face {
-    font-family: 'Titillium Web bold';
-    src: url('#{$brand-font-pathT}titilliumweb-bold-webfont.woff2') format('woff2'),
-         url('#{$brand-font-pathT}titilliumweb-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Titillium Web';
-    src: url('#{$brand-font-pathT}titilliumweb-regular-webfont.woff2') format('woff2'),
-         url('#{$brand-font-pathT}titilliumweb-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 @font-face {
     font-family: 'Outfit';
-    src: url('#{$brand-font-path}Outfit-VariableFont_wght.ttf') format('ttf');
+    src: url('#{$brand-font-path}Outfit-Medium.woff2') format('woff2'),
+    url('#{$brand-font-path}Outfit-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OutfitLight';
+    src: url('#{$brand-font-path}Outfit-VariableFont_wght.ttf') format('ttf'),
+    url('#{$brand-font-path}Outfit-Thin.woff2') format('woff2'),
+    url('#{$brand-font-path}Outfit-Thin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OutfitBold';
+    src: url('#{$brand-font-path}Outfit-Bold.woff2') format('woff2'),
+    url('#{$brand-font-path}Outfit-Bold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
