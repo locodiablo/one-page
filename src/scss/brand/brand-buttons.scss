@@ -7,7 +7,6 @@ $btnHoverColor: #ccc;
   border-radius: 0;
   font-family: $brand-font;
   font-size: $size-btn-text;
-  //border: solid $width-active-border $primary;
   border: none;
   font-weight: bold;
   padding: $grid-gutter-width/2 $grid-gutter-width/2;
@@ -15,7 +14,6 @@ $btnHoverColor: #ccc;
   &:hover{
     background: $primary;
     color: $white;
-    //border: solid $width-active-border $primary;
     animation: effect-pulse 1s;
     .site-icon{
       color: $white;
@@ -35,49 +33,6 @@ $btnHoverColor: #ccc;
       }
     }
   }
-
-
-  // &.btn-white-outline{
-  //   background: transparent;
-  //   border: solid $width-active-border $white;
-  //   color: $white;
-  //
-  //   &:hover{
-  //     background: #eee;
-  //     color: $primary;
-  //     .site-icon{
-  //       color: $black;
-  //     }
-  //   }
-  // }
-
-  // &.btn-black{
-  //   background: $black;
-  //   color: $white;
-  //   border: solid $width-active-border $primary;
-  //   &:hover{
-  //     background: #eee;
-  //     color: $primary;
-  //     border: solid $width-active-border $white;
-  //     .site-icon{
-  //       color: $primary;
-  //     }
-  //   }
-  // }
-
-  // &.btn-black-outline{
-  //   background: transparent;
-  //   border: solid $width-active-border $black;
-  //   color: $black;
-  //
-  //   &:hover{
-  //     background: $primary;
-  //     color: $white;
-  //     .site-icon{
-  //       color: $white;
-  //     }
-  //   }
-  // }
 
 }
 

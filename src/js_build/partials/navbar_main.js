@@ -5,7 +5,7 @@ const img_logo = require("../partials/img_logo.js")
 const navTab = function(data){
   const navItem = paths.menuData[data]
   return `
-  <a href="#${navItem.href}" data-toggle="tab--" role="tab" aria-controls="${navItem.href}" aria-selected="false" class="nav-item nav-item-content-${data}">
+  <a href="/#${navItem.href}" data-toggle="tab--" role="tab" aria-controls="${navItem.href}" aria-selected="false" class="nav-item nav-item-content-${data}">
     ${navItem.text}
   </a>
   `
@@ -24,7 +24,7 @@ function navbar(data){return `
 
       <div class="navbar-expand mx-auto">
         <div class=" nav nav-tabs text-center nav-items navbar-nav navbar-site">
-          <a href="#content-home" class="nav-item nav-item-home" role="tab" aria-controls="content-home" aria-selected="true">
+          <a href="/#content-home" class="nav-item nav-item-home" role="tab" aria-controls="content-home" aria-selected="true">
             ${img_logo({id: 'nav_logo',class: ''})}
             <span class="d-none d-md-inline- strong">${vars.site_name}</span>
           </a>

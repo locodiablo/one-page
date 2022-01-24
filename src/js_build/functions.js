@@ -37,9 +37,9 @@ const functions = {
   },
   render_bullets: function(data){
     return `
-      <ul class="bullets ${data.classes ? data.classes : ''}">
+      <ul class="bullets text-left pb-4 ${data.classes ? data.classes : ''}">
         ${data.bullets.map(bulletpoint =>
-          `<li>${bulletpoint}</li>`
+          `<li class="pb-3">${bulletpoint}</li>`
           ).join("")}
       </ul>
     `
