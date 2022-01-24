@@ -20,6 +20,8 @@ const vars = {
   site_footer_caption: "Lovingly designed and built with .js by me. So there.",
   site_name_caption: "Former Lead Designer at Policy Expert: fast-growing UK insurer and number 1 rated UK home insurance provider on Review Centre, founder of MadJester Clothing",
   brand_font: 'Titillium Web',// Titillium Web
+  url_cv: "assets/cv/simon-rollett-i-cv-2022.pdf",
+  url_portfolio: "/assets/cv/simon-rollett-portfolio-v2-2021-z.pdf",
   //logo_src: fs.readFileSync("./src/assets/images/brand_vector/logo-sr.svg", 'utf8'),
 
   skyClasses: [
@@ -47,7 +49,7 @@ const vars = {
     // },
     {
       href: 'tel:07748024641',
-      text: "07748 024641",
+      text: "Tel",
       class: '',
       icon: 'btn-icon fas fa-phone'
     },
@@ -58,8 +60,8 @@ const vars = {
     //   icon: 'btn-icon fas fa-envelope'
     // },
     {
-      href: `simon@madjester.co.uk`,
-      text: "simon@madjester.co.uk",
+      href: `mailto:simon@madjester.co.uk`,
+      text: "Email",
       class: '',
       icon: 'btn-icon fas fa-envelope'
     },

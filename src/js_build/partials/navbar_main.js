@@ -5,7 +5,7 @@ const img_logo = require("../partials/img_logo.js")
 const navTab = function(data){
   const navItem = paths.menuData[data]
   return `
-  <a href="#${navItem.value}" data-toggle="tab--" role="tab" aria-controls="${navItem.value}" aria-selected="false" class="nav-item nav-item-content-${data}">
+  <a href="#${navItem.href}" data-toggle="tab--" role="tab" aria-controls="${navItem.href}" aria-selected="false" class="nav-item nav-item-content-${data}">
     ${navItem.text}
   </a>
   `

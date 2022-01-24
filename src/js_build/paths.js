@@ -14,27 +14,32 @@ const paths = {
     "contact": {
       text: "Contact",
       type: "href",
-      value: "content-contact"
+      href: "content-contact",
+      icon: 'fas fa-phone'
     },
     "cv": {
       text: "CV",
       type: "href",
-      value: "content-cv"
+      href: "content-cv",
+      icon: 'fas fa-file'
     },
     "gallery": {
       text: "Gallery",
       type: "href",
-      value: "content-gallery"
+      href: "content-gallery",
+      icon: 'fas fa-images'
     },
     "career": {
       text: "Career",
       type: "href",
-      value: "content-career"
+      href: "content-career",
+      icon: 'fas fa-chart-line'
     },
     "about": {
       text: "About",
       type: "href",
-      value: "content-about"
+      href: "content-about",
+      icon: 'btn-icon fas fa-user-alt'
     }
   }
 }

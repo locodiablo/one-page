@@ -5,7 +5,7 @@ const id_cover_bg = ".jumbotron-cover"
 const modal_nav_class = "modal-nav"
 const classScrollActive = 'scrollActive'
 const classNavBackDefaults = "nav-back"//nav-item nav-back disabled j-back
-const classNavMain = ".nav-main-wrapper"
+const classNavMain = ".navbar-main"
 const classNavItems = "nav-items"
 const classNavItem = "nav-item"
 const scroll_min = 40
@@ -74,6 +74,7 @@ function clearModalOnClose(){
   $(id_modal + " .modal-footer").html("")
   $(id_modal).data('bs.modal',null)
   $("body").removeClass(classBody)
+  //$("body").removeClass('model-open')
   $("body .modal-backdrop").remove()
 }
 
@@ -83,6 +84,7 @@ function resetModalNav(){
   navCarouselActive()
   clearModalOnClose()
   $(`.nav-item-${lastActiveNav}`).removeClass(classNavTabActive)
+  //$("body").removeClass('model-open')
 }
 
 const templates = {
@@ -122,7 +124,7 @@ const templates = {
   sideNavTypes: {
     href: function(incomingLinkData){
      return `
-     <a class="nav-item list-group-item-${incomingLinkData.value} nav-href" href="#${incomingLinkData.value}">
+     <a class="nav-item list-group-item-${incomingLinkData.href} nav-href" href="#${incomingLinkData.href}">
          <i class="site-icon nav-fas fas fa-arrow-right mr-2"></i>${incomingLinkData.text}
      </a>
      `
@@ -211,7 +213,7 @@ $(document).ready(function ($) {
     let newMenuContent = ""
 
     for(const i in menuData){
-      console.log(`${i}: ${menuData[i].value}`)
+      console.log(`${i}: ${menuData[i].href}`)
       newMenuContent += templates.sideNavTypes[menuData[i].type](menuData[i])
     }
 
@@ -244,56 +246,6 @@ $(document).ready(function ($) {
       clickedIndex: thisLinkLevel,
       parentData: parentData
     })
-  })
-
-  // demo url in modal
-  $(document).on("click", ".j-demo-site", function(e){
-    e.preventDefault();
-
-    const brand = $("#sjr-nav-logo").html()
-
-    const setIframe = `
-    <ul class="nav nav-tabs justify-content-center demo-nav-tabs mx-auto mb-2">
-      <li class="nav-item">
-        <a href="#" class="nav-link nav-link-xs active j-cover-size" data-size="xs">Small</a>
-      </li>
-      <li class="nav-item d-none d-sm-flex">
-        <a href="#" class="nav-link nav-link-sm j-cover-size" href="#" data-size="sm">Medium</a>
-      </li>
-      <li class="nav-item d-none d-lg-flex">
-        <a href="#" class="nav-link nav-link-lg j-cover-size" href="#" data-size="lg">Large</a>
-      </li>
-    </ul>
-    `
-
-    const demos = {
-      madjester: {
-        title: "MadJester",
-        url: "madjester.co.uk"
-      },
-      policyexpert: {
-        title: "Policy Expert",
-        url: "policyexpert.co.uk"
-      }
-    }
-
-    const thisConfig = $(this).data("demo")
-
-    do_modal({
-      backdrop: true,
-      body: `${setIframe}<iframe src="https://www.${demos[thisConfig].url}" class="container-xs" id="modal-iframe" title="${demos[thisConfig]}"></iframe>`,
-      class: 'modal-demo',
-      title: `<a href="/" class="mr-2">${brand}</a><span class="strong">Demo:</span> ` + demos[thisConfig].title
-    })
-
-  })
-
-  $(document).on("click", ".j-cover-size", function(e){
-      const thisSize = $(this).data("size")
-      const thisAction = `container-${thisSize}`
-      $(".demo-nav-tabs .nav-link").removeClass("active")
-      $(".demo-nav-tabs .nav-link-" + thisSize).addClass("active")
-      $("#modal-iframe").attr("class",thisAction)
   })
 
   // open topnav menu
@@ -335,31 +287,31 @@ $(document).ready(function ($) {
       resetModalNav()
   })
 
-  var checkScrollBar = function(){
-      $(this).scrollTop() > 1 ?
-      $("body").addClass(classScrollActive) : $("body").removeClass(classScrollActive)
-  }
-
-  //toggleContact[`mob${isMobileDevice()}`]()
-
 })
+
+function checkScrollBar(){
+    $(this).scrollTop() > scroll_min ?
+    $("body").addClass(classScrollActive) : $("body").removeClass(classScrollActive)
+}
 
 // nav tabs
 var hash = "";
 
 function doTab(data){
+  // $(id_modal).modal('hide')
+  // $('body').removeClass("modal-open");
   $('.tab-pane.active.show').removeClass("active show");
    $('.navbar-main .nav-item-' + data).addClass("active");
   //
   $('body').addClass(hash);
   //
   $('#' + data).addClass(" active");
-  setTimeout(function(){
-    $(id_modal).hide()
-    $("body .modal-backdrop").remove()
+  //setTimeout(function(){
+    //$(id_modal).modal('hide')
+    //$("body .modal-backdrop").remove()
     $('#' + data).addClass(" show");
     console.log('#' + data + ' done')
-  },300)
+  //},300)
 
 }
 
@@ -371,7 +323,11 @@ function locationHashChanged() {
   $('body').removeClass(hash);
   $('.navbar-main .nav-item-' + hash).removeClass("active");
   hash = location.hash.replace(/^#/, '');  // ^ means starting, meaning only match the first hash
+  //clearModalOnClose()
+  $(id_modal).modal('hide')
+  $('body').removeClass("modal-open");
   doTab(hash)
+  //$("body").removeClass('model-open')
 }
 
 function hashCheck(){
@@ -397,17 +353,6 @@ $(document).on("slid.bs.carousel",`.page-gallery`,function(e){// wa gallery.id
   $(`#gallery-text-${currentIndex}`).tab('show')
 })
 
-//
-
 $(window).scroll(function () {
-  if ($(window).scrollTop() > scroll_min) {
-      if (scroll_top < ($(window).scrollTop())) {
-          $(classNavMain).addClass("affix")
-      } else {
-          $(classNavMain).removeClass("affix")
-      }
-  } else {
-      $(classNavMain).removeClass("affix")
-  }
-  scroll_top = $(window).scrollTop()
+  checkScrollBar()
 })

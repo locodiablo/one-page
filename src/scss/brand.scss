@@ -8,7 +8,7 @@
 @import "./brand/brand-jumbotron.scss";
 @import "./brand/brand-media.scss";
 @import "./brand/brand-poster.scss";
-
+@import "./brand/brand-scroll-active.scss";
 
 
 // midnight
@@ -57,6 +57,12 @@ body{
         border-bottom: solid .5rem rgba(255,255,255,0.3);
       }
     }
+  }
 
+  .btn-2{
+    color: $white;
+    .btn-icon{
+      background: rgba(0,0,0,.6);
+    }
   }
 }
