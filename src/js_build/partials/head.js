@@ -8,6 +8,8 @@ const site_cache = `
 <meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
 `
 
+const old_icons = `<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">`
+
 function head(data){
 const head = data.head;
 const pageUrl = `https://${vars.site_url}${data.pageContentUrl}`
@@ -52,8 +54,6 @@ const pageImageUrl = head.hasOwnProperty('page_img_url') ? head.page_img_url : p
     <link rel="mask-icon" href="${paths.faviconDir}safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/assets/css/style.css?${today.getTime()}">
 
