@@ -3,9 +3,9 @@ const paths = require("../paths.js");
 var today = new Date();
 
 const site_cache = `
-<meta http-equiv=“Pragma” content=”no-cache”>
-<meta http-equiv=“Expires” content=”-1″>
-<meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
 `
 
 const old_icons = `<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">`

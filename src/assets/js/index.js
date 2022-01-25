@@ -74,7 +74,6 @@ function clearModalOnClose(){
   $(id_modal + " .modal-footer").html("")
   $(id_modal).data('bs.modal',null)
   $("body").removeClass(classBody)
-  //$("body").removeClass('model-open')
   $("body .modal-backdrop").remove()
 }
 
@@ -84,7 +83,6 @@ function resetModalNav(){
   navCarouselActive()
   clearModalOnClose()
   $(`.nav-item-${lastActiveNav}`).removeClass(classNavTabActive)
-  //$("body").removeClass('model-open')
 }
 
 const templates = {
@@ -249,33 +247,6 @@ $(document).ready(function ($) {
   })
 
   // open topnav menu
- $(document).on("click", ".j-t-menu", function(e){
-   e.preventDefault()
-   resetModalNav()
-   const thisLinkLevel = Number(`${$(this).data("my-menu")}`)
-   clickedNavIndex.push(thisLinkLevel)
-   renderModalNav({
-     modalTitle: templates.linkBack,
-     modalBody: templates.navCarousel({
-       parentData: menuData[thisLinkLevel].pageData,
-       left: templates.navItemsLink({
-         parentData: {
-           text: menuData[thisLinkLevel].pageData.text,
-           href: menuData[thisLinkLevel].pageData.href
-         }
-       }) + menuData[thisLinkLevel].pageData.description,
-       right: menuData[thisLinkLevel].children.map((navItem,index) => {
-         let linkData = {
-           data: navItem,
-           thisLinkCount: index
-         }
-         return templates.sideNavTypes[navItem.type](linkData)
-       }).join("")
-     }),
-     bodyClass: modal_nav_class,
-     navTabIndex: thisLinkLevel
-   })
- })
 
   $(document).on("click", ".j-nav-back", function(e){
     $(nav_carousel_id).carousel(currentIndex-1)
@@ -298,24 +269,16 @@ function checkScrollBar(){
 var hash = "";
 
 function doTab(data){
-  // $(id_modal).modal('hide')
-  // $('body').removeClass("modal-open");
   $('.tab-pane.active.show').removeClass("active show");
-   $('.navbar-main .nav-item-' + data).addClass("active");
-  //
+  $('.navbar-main .nav-item-' + data).addClass("active");
   $('body').addClass(hash);
-  //
   $('#' + data).addClass(" active");
-  //setTimeout(function(){
-    //$(id_modal).modal('hide')
-    //$("body .modal-backdrop").remove()
-    $('#' + data).addClass(" show");
-    console.log('#' + data + ' done')
-  //},300)
-
+  $('#' + data).addClass(" show");
+  console.log('#' + data + ' done')
 }
 
 function setDefault(){
+  hash = "content-home"
   doTab('content-home')
 }
 
