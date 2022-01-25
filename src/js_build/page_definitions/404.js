@@ -13,7 +13,7 @@ const page_content = {
   config: {
     html_template: "template_page_master",
     nav_text: "404 error. Crikey.",
-    body_class: ""
+    body_class: "page-404"
   },
   head:{
     title: "Crikey.<br>Something's missing.",
