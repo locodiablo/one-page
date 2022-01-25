@@ -1,0 +1,8 @@
+
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^sjrollett\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.sjrollett\.com$
+RewriteRule ^/?$ "https\:\/\/sjrollett\.com\/" [R=301,L]
+ErrorDocument 404 /404.html

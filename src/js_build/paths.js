@@ -27,7 +27,7 @@ const paths = {
       text: "Gallery",
       type: "href",
       href: "content-gallery",
-      icon: 'fas fa-images'
+      icon: 'fas fa-image'
     },
     "career": {
       text: "Career",

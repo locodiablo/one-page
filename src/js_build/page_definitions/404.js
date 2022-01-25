@@ -16,8 +16,8 @@ const page_content = {
     body_class: "page-404"
   },
   head:{
-    title: "Crikey.<br>Something's missing.",
-    description: "Crikey. 404 error. Somebody's asking for a smacked bottom."
+    title: "404 Error. Oops.",
+    description: "Quite frankly, this is a shock to us all."
   },
   body:[
     `

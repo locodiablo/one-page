@@ -56,6 +56,7 @@ const pageImageUrl = head.hasOwnProperty('page_img_url') ? head.page_img_url : p
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="/assets/css/style.css?${today.getTime()}">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
     <script type="application/ld+json">
     {

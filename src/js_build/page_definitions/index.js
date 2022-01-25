@@ -23,7 +23,7 @@ const link_data_portfolio = {
   href: vars.url_portfolio,
   text: "PDF portfolio",
   class: '',
-  icon: 'btn-icon fas fa-images'
+  icon: 'btn-icon fas fa-image'
 }
 
 const page_content = {
