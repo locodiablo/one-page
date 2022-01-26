@@ -49,6 +49,7 @@ const page_content = {
                   ${img_logo({id: 'logo_main',class: 'invert'})}
                   <h4 class="homepage-poster-title brand-font py-2 pb-md-4">Designer</h4>
                   <div class="homepage-poster-options">
+                    <h2 class="d-none d-sm-flex col-8 col-sm-10 mx-auto fg-white pb-4">A cross-discipline creative, optimising digital design for over 20 years</h2>
                     ${template_link(paths.menuData['cv'])}
                     ${template_link(paths.menuData['gallery'])}
                     ${template_link(paths.menuData['contact'])}
