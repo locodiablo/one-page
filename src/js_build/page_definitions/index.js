@@ -44,7 +44,6 @@ const page_content = {
             <div class="container-xl homepage-poster-container">
 
               <div class="row homepage-poster-row">
-
                 <div class="homepage-poster-content">
                   ${img_logo({id: 'logo_main',class: 'invert'})}
                   <h4 class="homepage-poster-title brand-font py-2 pb-md-4">Designer</h4>
