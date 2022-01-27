@@ -13,7 +13,7 @@ const old_icons = `<link rel="stylesheet" href="https://use.fontawesome.com/rele
 function head(data){
 const head = data.head;
 const pageUrl = `https://${vars.site_url}${data.pageContentUrl}`
-const pageImageUrl = head.hasOwnProperty('page_img_url') ? head.page_img_url : paths.imagesLogoSR
+const pageImageUrl = head.hasOwnProperty('page_img_url') ? head.page_img_url : paths.imagesSimonRLogoMeta
   return `
   <!doctype html>
   <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
@@ -29,12 +29,12 @@ const pageImageUrl = head.hasOwnProperty('page_img_url') ? head.page_img_url : p
     <meta property="og:url" content="${pageUrl}">
     <meta property="og:site_name" content="${vars.site_name}">
     <meta property="og:locale" content="en_GB">
-    <meta property="og:image" content="${pageImageUrl}">
+    <meta property="og:image" content="https://${vars.site_url}${pageImageUrl}">
     <meta property="og:updated_time" content="${today.toISOString()}">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="${head.title}">
-    <meta name="twitter:image" content="${pageImageUrl}">
+    <meta name="twitter:image" content="https://${vars.site_url}${pageImageUrl}">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="${head.title}">

@@ -22,6 +22,7 @@ const paths = {
   definitionsDir: "src/js_build/page_definitions",
   imagesDir: "./src/assets/images",
   imagesSimonRLogo: "/assets/images/brand_vector/simon-rollett-logo-5.svg",
+  imagesSimonRLogoMeta: "/assets/images/gallery/simon-rollett-logo.jpg",
 
   assets: {
     cv: file_cv,
