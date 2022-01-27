@@ -3,3 +3,29 @@
     color: $primary;
   }
 }
+
+.modal-backdrop{
+  background-color: $white;
+  &.show{
+    opacity: 0.9;
+  }
+}
+
+.content-home{
+  .modal-body{
+    .btn-2{
+      color: $black;
+      margin: 0 1rem 2rem;
+      .btn-icon{
+        background: $black;
+      }
+    }
+    .close{
+      opacity: 1;
+    }
+  }
+}
+
+.modal-nav-btns{
+  padding-top: 1rem;
+}

@@ -83,7 +83,7 @@ const page_content = {
             title: "Career",
             subtitle: "Story so far:",
             paras: [
-              `<strong>Running DBA Design Services</strong> from Jun 2021 onwards – Projects included:
+              `<strong>Running DBA Design Services</strong> from Jun 2021 onward. Projects included:
               ${functions.render_bullets({
                 bullets: [
                   "Creating the Brand Strategy for a cryptocurrency startup",
@@ -101,7 +101,7 @@ const page_content = {
                   "Developed processes for rapid, brand-friendly, media development"
                 ]
               })}`,
-              `<strong>Running DBA Design Services</strong> from Jun 2002 to Sep 2011 – Projects included:
+              `<strong>Running DBA Design Services</strong> from Jun 2002 to Sep 2011. Projects included:
               ${functions.render_bullets({
                 bullets: [
                   "Providing brand, graphic and web design for large and medium sized customers",
@@ -113,19 +113,19 @@ const page_content = {
               "Founded new clothing business to address a segment of which I had deep experience. Designed:",
               functions.render_bullets({
                 bullets: [
-                  "Product – using innovative materials and research to bridge the gap between motorbike practicality and leisure",
-                  "Marketing – everything from brochures, exhibition stands, packaging and comms",
-                  "Web – complete e-commerce platform using the leading-edge technologies of the time"
+                  "Product - using innovative materials and research to bridge the gap between motorbike practicality and leisure",
+                  "Marketing - everything from brochures, exhibition stands, packaging and comms",
+                  "Web - complete e-commerce platform using the leading-edge technologies of the time"
                 ]
               }),
               `<strong>Creative Director for Triangle Group </strong> from May 1998 to Aug 2002`,
               "Evolved from Graphic Designer to Creative Director, responsible for designing all media used by this highly technical IT solutions provider. I owned brand identity for the group, provided creative input to customer projects, and managed a small team of designers.",
               `<strong>Editor - Glenigan</strong>`,
-              "‘Trends’ journal - author, edit and approve content for monthly construction industry journal:",
+              "'Trends' journal - author, edit and approve content for monthly construction industry journal:",
               functions.render_bullets({
                 bullets: [
                   "Updated design, improved layout and content structure",
-                  "Doubled paid subscriptions from £17k to £34k within 12 months"
+                  "Doubled paid subscriptions from &pound;17k to &pound;34k within 12 months"
                 ]
               })
             ],

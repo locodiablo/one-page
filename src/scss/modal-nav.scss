@@ -30,7 +30,11 @@
         border: 0;
         border-radius: 0;
         background: $modal-top-bg;
-
+        .modal-header{
+          .close{
+            opacity: 1;
+          }
+        }
         .modal-body{
           padding: 0;
 
@@ -56,6 +60,9 @@
               }
             }
           }
+        }
+        .modal-footer{
+          border: none;
         }
       }
     }

@@ -18,8 +18,8 @@ const modal_nav_class = "modal-nav"
 const classScrollActive = 'scrollActive'
 const classNavBackDefaults = "nav-back"//nav-item nav-back disabled j-back
 const classNavMain = ".navbar-main"
-const classNavItems = ""
-const classNavItem = "nav-item"
+const classNavItems = "modal-nav-btns"
+const classNavItem = "btn-2"
 const scroll_min = 40
 const classNavTabActive = "nav-t-active"
 let scroll_top = 0
@@ -124,7 +124,7 @@ const templates = {
             </div>
           </div>
           <div class="col-12 col-sm-6">
-            <div class="list-group ${classNavItems} nav-items-column">
+            <div class="text-center ${classNavItems} nav-items-column">
               ${data.right}
             </div>
           </div>
@@ -134,8 +134,8 @@ const templates = {
   sideNavTypes: {
     href: function(incomingLinkData){
      return `
-     <a class="nav-item list-group-item-${incomingLinkData.href} nav-href" href="#${incomingLinkData.href}">
-         <i class="site-icon nav-fas fas fa-arrow-right mr-2"></i>${incomingLinkData.text}
+     <a class="${classNavItem} list-group-item-${incomingLinkData.href} nav-href" href="#${incomingLinkData.href}">
+         <i class="btn-icon nav-fas ${incomingLinkData.icon}"></i>${incomingLinkData.text}
      </a>
      `
    },

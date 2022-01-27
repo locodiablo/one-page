@@ -50,7 +50,7 @@ const paths = {
       text: "GitHub",
       type: false,
       href: "https://github.com/locodiablo",
-      icon: 'fab fa-github-square'
+      icon: 'fab fa-github'
     }
   },
   menuData: {
@@ -58,7 +58,7 @@ const paths = {
       text: "Contact",
       type: "href",
       href: "content-contact",
-      icon: 'fas fa-phone'
+      icon: 'fas fa-comment'
     },
     cv: {
       text: "CV",
@@ -76,13 +76,13 @@ const paths = {
       text: "Career",
       type: "href",
       href: "content-career",
-      icon: 'fas fa-chart-line'
+      icon: 'fas fa-history'
     },
     about: {
       text: "About",
       type: "href",
       href: "content-about",
-      icon: 'btn-icon fas fa-user-alt'
+      icon: 'btn-icon fas fa-user'
     }
   }
 }
