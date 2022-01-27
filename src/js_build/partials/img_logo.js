@@ -23,8 +23,8 @@ function logo(data){return `
 </g>
 <g class="logo_head">
 <g class="cls-2"><path class="cls-3 bg-head" d="M510.5,94.3c0,18.5-17.9,56.1-36,52.9-23.5-4.1-16.2-40-24.5-52.1-3.2-4.7-.3-7.3-1-10.3-2.6-11.1,3.9-25.6,26.3-29.4C493.4,52.4,510.5,75.8,510.5,94.3Z" transform="translate(-5.5 -55.14)"/></g>
-<g class="cls-2"><circle class="cls-4 eyeball-left" cx="478.4" cy="35.96" r="14.5"/></g>
-<g class="cls-2"><path class="cls-4 eyeball-right" d="M470.5,96.5a9,9,0,0,1-18,0c0-3.2,3.7-2.7,7.9-5.3C466.3,87.5,470.5,91.5,470.5,96.5Z" transform="translate(-5.5 -55.14)"/></g>
+<g class="cls-2"><circle class="cls-4 eyeball-right" cx="478.4" cy="35.96" r="14.5"/></g>
+<g class="cls-2"><path class="cls-4 eyeball-left" d="M470.5,96.5a9,9,0,0,1-18,0c0-3.2,3.7-2.7,7.9-5.3C466.3,87.5,470.5,91.5,470.5,96.5Z" transform="translate(-5.5 -55.14)"/></g>
 <g class="cls-2"><circle class="cls-5 pupil-right" cx="479.1" cy="35.36" r="5.7"/></g>
 <g class="cls-2"><circle class="cls-5 pupil-left" cx="456.7" cy="39.36" r="3.7"/></g>
 </g>
