@@ -20,8 +20,8 @@ const vars = {
   site_footer_caption: "Lovingly designed and built with .js by me. So there.",
   site_name_caption: "Former Lead Designer at Policy Expert: fast-growing UK insurer and number 1 rated UK home insurance provider on Review Centre, founder of MadJester Clothing",
   brand_font: 'Titillium Web',// Titillium Web
-  url_cv: "assets/cv/simon-rollett-i-cv-2022.pdf",
-  url_portfolio: "/assets/cv/simon-rollett-portfolio-v1-2022-z.pdf",
+  // url_cv: "assets/cv/simon-rollett-i-cv-2022.pdf",
+  // url_portfolio: "/assets/cv/simon-rollett-portfolio-v1-2022-z.pdf",
   //logo_src: fs.readFileSync("./src/assets/images/brand_vector/logo-sr.svg", 'utf8'),
 
   skyClasses: [
@@ -39,46 +39,6 @@ const vars = {
     {"CSS, CSS3": 10},
     {"PHP": 10},
     {"WordPress": 10}
-  ],
-  profileLinks: [
-    // {
-    //   href: 'tel: 07748024641',
-    //   text: "Call now",
-    //   class: 'contact-action d-none',
-    //   icon: 'btn-icon fas fa-phone'
-    // },
-    {
-      href: 'tel:07748024641',
-      text: "Tel",
-      class: '',
-      icon: 'btn-icon fas fa-phone'
-    },
-    // {
-    //   href: `mailto: simon@madjester.co.uk`,
-    //   text: "Email now",
-    //   class: 'contact-action d-none-',
-    //   icon: 'btn-icon fas fa-envelope'
-    // },
-    {
-      href: `mailto:simon@madjester.co.uk`,
-      text: "Email",
-      class: '',
-      icon: 'btn-icon fas fa-envelope'
-    },
-    {
-      href: paths.urlLinkedIn,
-      text: "LinkedIn",
-      target: '_blank',
-      class: '',
-      icon: 'btn-icon fab fa-linkedin'
-    },
-    {
-      href: paths.urlGit,
-      text: "GitHub",
-      target: '_blank',
-      class: '',
-      icon: 'btn-icon fab fa-github-square'
-    }
   ],
   thumbWidth: 300,
   theDate: {

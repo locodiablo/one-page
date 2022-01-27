@@ -5,27 +5,6 @@ const template_link = require("../templates/template_link.js")
 const template_tab_content = require("../templates/template_tab_content.js")
 const img_logo = require("../partials/img_logo.js")
 
-const link_data_contact = {
-  href: '#content-contact',
-  text: "Contact",
-  class: '',
-  icon: 'btn-icon fas fa-phone'
-}
-
-const link_data_cv = {
-  href: vars.url_cv,
-  text: "PDF C.V.",
-  class: '',
-  icon: 'btn-icon fas fa-file'
-}
-
-const link_data_portfolio = {
-  href: vars.url_portfolio,
-  text: "PDF portfolio",
-  class: '',
-  icon: 'btn-icon fas fa-image'
-}
-
 const page_content = {
   config: {
     html_template: "template_page_master",
@@ -48,7 +27,7 @@ const page_content = {
                   ${img_logo({id: 'logo_main',class: 'invert'})}
                   <h4 class="homepage-poster-title brand-font py-2 pb-md-4">Designer</h4>
                   <div class="homepage-poster-options">
-                    <h2 class="d-none d-sm-flex col-8 col-sm-10 mx-auto fg-white pb-4">A cross-discipline creative, optimising digital design for over 20 years</h2>
+                    <h2 class="homepage-poster-caption col-8 col-sm-10 mx-auto fg-white pb-4">A cross-discipline creative, optimising digital design for over 20 years</h2>
                     ${template_link(paths.menuData['cv'])}
                     ${template_link(paths.menuData['gallery'])}
                     ${template_link(paths.menuData['contact'])}
@@ -66,7 +45,12 @@ const page_content = {
             paras: [
               ""
             ],
-            actions: vars.profileLinks
+            actions: [
+              paths.contactData['tel'],
+              paths.contactData['email'],
+              paths.contactData['linkedin'],
+              paths.contactData['github']
+            ]
           })}
 
           ${template_tab_content({
@@ -77,7 +61,7 @@ const page_content = {
             paras: [
             ],
             actions: [
-              link_data_cv
+              paths.assets.cv
             ]
           })}
 
@@ -90,7 +74,7 @@ const page_content = {
 
             ],
             actions: [
-              link_data_portfolio
+              paths.assets.portfolio
             ]
           })}
 
@@ -146,8 +130,8 @@ const page_content = {
               })
             ],
             actions: [
-              link_data_cv,
-              link_data_contact
+              paths.menuData.cv,
+              paths.menuData.contact
             ]
           })}
 
@@ -160,9 +144,9 @@ const page_content = {
               "Unguarded biscuits. Beaches (winter, summer, rain or shine). Motorbikes - especially the crazy-fast ones. Badminton and squash so I can run around and hit things with impunity. Kickboxing (W-2 L-1 D-0) for resolving biscuit ownership disputes. Games - nerdishly mesmerised by the the attention to detail in Assassin’s Creed: Odyssey on PlayStation. Sublime technology: electric vehicles and genetics."
             ],
             actions: [
-              link_data_contact,
-              link_data_cv,
-              link_data_portfolio
+              paths.menuData.contact,
+              paths.menuData.cv,
+              paths.menuData.gallery
             ]
           })}
 

@@ -52,12 +52,17 @@
       }
   }
 }
-
+.homepage-poster-caption{
+  display: none;
+}
 
 @include orientation(landscape){
   @include media-breakpoint-down(sm){
     .homepage-poster-title{
       font-size: 1rem;
+    }
+    .homepage-poster-caption{
+      display: none;
     }
   }
 
@@ -95,6 +100,9 @@
 @include media-breakpoint-up(md){
   .homepage-poster-container{
     background-size: 55%;
-    //background-position: left center;
+  }
+
+  .homepage-poster-caption{
+    display: block;
   }
 }

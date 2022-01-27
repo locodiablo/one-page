@@ -18,7 +18,7 @@ const modal_nav_class = "modal-nav"
 const classScrollActive = 'scrollActive'
 const classNavBackDefaults = "nav-back"//nav-item nav-back disabled j-back
 const classNavMain = ".navbar-main"
-const classNavItems = "nav-items"
+const classNavItems = ""
 const classNavItem = "nav-item"
 const scroll_min = 40
 const classNavTabActive = "nav-t-active"
@@ -105,10 +105,10 @@ const templates = {
     return `<a class="nav-title d-block p-0 nav-section-heading h3 m-0" href="${data.parentData.href}"><i class="site-icon nav-fas fas fa-arrow-right mr-2"></i>${data.parentData.text}</a>`
   },
   navItems: function(data){
-    return `<div class="nav-items nav-items-column">
+    return `<div class="${classNavItems} nav-items-column">
       ${data.map(eachNavItem => {return `
         <a class="${classNavItem} ${eachNavItem.class}" href="${eachNavItem.href}">
-          <span class="site-icon ${eachNavItem.icon} mr-2"></span>${eachNavItem.text}
+          <span class="btn-icon ${eachNavItem.icon} mr-2"></span>${eachNavItem.text}
         </a>
         `}).join("")}
     </div>

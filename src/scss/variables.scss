@@ -11,11 +11,12 @@ $bg-nav-btn: $bg-nav;
 
 $size-btn-text: 1rem;
 
-$width-modal-nav: 90%;
+$width-modal-nav: 100%;
 $width-modal-nav-max: 10rem;
 
 $nav-item-height: 5rem;
-$modal-top: $nav-item-height;
+$nav-item-unit: 5rem;
+$modal-top: 0;//$nav-item-height
 $modal-top-bg: $bg-nav;
 $gutter: $grid-gutter-width/2;
 

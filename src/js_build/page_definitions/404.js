@@ -32,7 +32,8 @@ const page_content = {
             <h2>*Horrified squeals*</h2>
             <p class="my-4 text-left">Well ... not quite sure what's happened here - please try the links below to find what you were looking for:</p>
             <div class="my-4 text-center">
-              ${actions.map(eachAction => template_link(eachAction)).join("")}
+              ${actions.map(eachAction =>
+                template_link(eachAction)).join("")}
             </div>
           </div>
         </div>
