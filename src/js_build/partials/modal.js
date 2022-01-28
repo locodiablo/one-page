@@ -6,7 +6,7 @@ function modal(data){return `
       <div class="modal-content">
         <div class="modal-header container">
           <h4 class="modal-title" id="exampleModalLabel">${data.title}</h4>
-          <button type="button" class="close fas fa-times" data-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="close fas icon-close" data-dismiss="modal" aria-label="Close"></button>
         </div>
         <div id="modal-body-general" class="modal-body">
             <div class="justify-content-center"></div>

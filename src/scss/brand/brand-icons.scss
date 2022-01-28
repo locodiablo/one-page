@@ -1,0 +1,145 @@
+$icon-font-path: "../fonts/icons";
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('#{$icon-font-path}/icomoon.eot?joelvd');
+  src:  url('#{$icon-font-path}/icomoon.eot?joelvd#iefix') format('embedded-opentype'),
+    url('#{$icon-font-path}/icomoon.ttf?joelvd') format('truetype'),
+    url('#{$icon-font-path}/icomoon.woff?joelvd') format('woff'),
+    url('#{$icon-font-path}/icomoon.svg?joelvd#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-figma:before {
+  content: "\e90b";
+  color: #f24e1e;
+}
+.icon-appliance1:before {
+  content: "\e90d";
+}
+.icon-photo:before {
+  content: "\e909";
+}
+.icon-menu:before {
+  content: "\e90a";
+}
+.icon-user:before {
+  content: "\e900";
+}
+.icon-profile:before {
+  content: "\e900";
+}
+.icon-account:before {
+  content: "\e900";
+}
+.icon-avatar:before {
+  content: "\e900";
+}
+.icon-history:before {
+  content: "\e910";
+}
+.icon-linkedin:before {
+  content: "\e901";
+}
+.icon-brand:before {
+  content: "\e901";
+}
+.icon-social:before {
+  content: "\e901";
+}
+.icon-github:before {
+  content: "\e902";
+}
+.icon-brand1:before {
+  content: "\e902";
+}
+.icon-octacat:before {
+  content: "\e902";
+}
+.icon-social1:before {
+  content: "\e902";
+}
+.icon-bubble:before {
+  content: "\e903";
+}
+.icon-comment:before {
+  content: "\e903";
+}
+.icon-chat:before {
+  content: "\e903";
+}
+.icon-talk:before {
+  content: "\e903";
+}
+.icon-file-pdf:before {
+  content: "\e904";
+}
+.icon-file:before {
+  content: "\e904";
+}
+.icon-file-format:before {
+  content: "\e904";
+}
+.icon-phone:before {
+  content: "\e905";
+}
+.icon-telephone:before {
+  content: "\e905";
+}
+.icon-contact:before {
+  content: "\e905";
+}
+.icon-support:before {
+  content: "\e905";
+}
+.icon-call:before {
+  content: "\e905";
+}
+.icon-search:before {
+  content: "\e908";
+}
+.icon-file-text:before {
+  content: "\e912";
+}
+.icon-envelope:before {
+  content: "\e90e";
+}
+.icon-close:before {
+  content: "\e911";
+}
+.icon-remove:before {
+  content: "\e911";
+}
+.icon-times:before {
+  content: "\e911";
+}
+.icon-chevron-right:before {
+  content: "\e906";
+}
+.icon-chevron-left:before {
+  content: "\e907";
+}
+.icon-chevron-down:before {
+  content: "\e90c";
+}
+.icon-chevron-up:before {
+  content: "\e90f";
+}

@@ -38,7 +38,7 @@ function navbar(data){return `
       </div>
 
       <span class="navbar-toggler j-main-menu" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="nav-fas fas fa-bars"></span>
+        <span class="nav-fas icon-menu"></span>
       </span>
 
     </div>

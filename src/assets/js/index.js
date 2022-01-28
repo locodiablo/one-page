@@ -64,7 +64,7 @@ const templates = {
     return `<div class="nav-title nav-section-heading h3 m-0">${data.parentData.text}</div>`
   },
   navItemsLink: function(data){
-    return `<a class="nav-title d-block p-0 nav-section-heading h3 m-0" href="${data.parentData.href}"><i class="site-icon nav-fas fas fa-arrow-right mr-2"></i>${data.parentData.text}</a>`
+    return `<a class="nav-title d-block p-0 nav-section-heading h3 m-0" href="${data.parentData.href}"><i class="site-icon nav-fas icon-chevron-right mr-2"></i>${data.parentData.text}</a>`
   },
   navItems: function(data){
     return `<div class="${classNavItems} nav-items-column">
@@ -105,7 +105,7 @@ const templates = {
   },
   linkBack: `
       <div class="nav-back disabled j-back" aria-label="back link">
-          <i class="nav-fas fas fa-arrow-left mr-2"></i>
+          <i class="nav-fas icon-chevron-left mr-2"></i>
       </div>
   `,
   navCarousel: function(data){

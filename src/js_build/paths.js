@@ -4,14 +4,14 @@ const file_cv = {
   text: "PDF CV",
   type: false,
   href: "/assets/cv/simon-rollett-i-cv-2022.pdf",
-  icon: 'fas fa-file'
+  icon: 'icon-file-pdf'
 }
 
 const file_portfolio = {
   text: "PDF gallery",
   type: false,
   href: "/assets/cv/simon-rollett-portfolio-v1-2022-z.pdf",
-  icon: 'fas fa-file'
+  icon: 'icon-file-pdf'
 }
 
 const paths = {
@@ -33,25 +33,25 @@ const paths = {
       text: "Tel",
       type: false,
       href: 'tel:07748024641',
-      icon: 'fas fa-phone'
+      icon: 'icon-telephone'
     },
     email: {
       text: "Email",
       type: false,
       href: "mailto:simon@madjester.co.uk",
-      icon: 'fas fa-envelope'
+      icon: 'icon-envelope'
     },
     linkedin: {
       text: "LinkedIn",
       type: false,
       href: 'https://www.linkedin.com/in/sjrollett/',
-      icon: 'fab fa-linkedin'
+      icon: 'icon-linkedin'
     },
     github: {
       text: "GitHub",
       type: false,
       href: "https://github.com/locodiablo",
-      icon: 'fab fa-github'
+      icon: 'icon-github'
     }
   },
   menuData: {
@@ -59,31 +59,31 @@ const paths = {
       text: "Contact",
       type: "href",
       href: "content-contact",
-      icon: 'fas fa-comment'
+      icon: 'icon-chat'
     },
     cv: {
       text: "CV",
       type: "href",
       href: "content-cv",
-      icon: 'fas fa-file'
+      icon: 'icon-file-text'
     },
     gallery: {
       text: "Gallery",
       type: "href",
       href: "content-gallery",
-      icon: 'fas fa-image'
+      icon: 'icon-photo'
     },
     career: {
       text: "Career",
       type: "href",
       href: "content-career",
-      icon: 'fas fa-history'
+      icon: 'icon-history'
     },
     about: {
       text: "About",
       type: "href",
       href: "content-about",
-      icon: 'btn-icon fas fa-user'
+      icon: 'icon-account'
     }
   }
 }
