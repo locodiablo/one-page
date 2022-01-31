@@ -54,6 +54,7 @@
 }
 .homepage-poster-caption{
   display: none;
+  max-width: 30rem;
 }
 
 @include orientation(landscape){
